@@ -1,0 +1,91 @@
+\documentclass[11pt, oneside, a4paper]{article}
+\usepackage[utf8]{vietnam}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{hyperref}
+
+%------------------- Canh lề trang -------------------
+\voffset=-0.5in
+\hoffset=0.2in
+\setlength{\evensidemargin}{0.2in}
+\setlength{\oddsidemargin}{0.2in}
+\setlength{\topmargin}{0.01in}
+\setlength{\headsep}{0.3in}
+\setlength{\footskip}{0.6in}
+\setlength{\textheight}{9.3in}
+\setlength{\textwidth}{6.2in}
+
+%------------------- Header và Footer -------------------
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{Đại học Phenikaa - Trường Công nghệ Thông tin}
+\rhead{Toán Rời Rạc - Lời Giải}
+\rfoot{\thepage}
+\lfoot{Năm học 2024 - 2025}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+%------------------- Định nghĩa môi trường -------------------
+\newtheorem{bt}{Bài}[section]
+\newtheorem{loigiai}{Lời giải}[bt]
+
+
+%------------------- Bắt đầu tài liệu -------------------
+\begin{document}
+
+\begin{center}
+    \Large \textbf{LỜI GIẢI BÀI TẬP MÔN TOÁN RỜI RẠC}\\
+    \textbf{\underline{NĂM HỌC 2024 -- 2025}}\\
+\end{center}
+
+\tableofcontents
+\newpage
+
+%------------------- Phần 1: Kiến thức cơ sở -------------------
+% \section{Phần 1: Kiến thức cơ sở (Logic)}
+
+\begin{bt}
+Chứng minh các biểu thức sau là hằng đúng bằng hai cách (lập bảng chân trị và dùng luật logic): 
+\begin{itemize}
+    \item[a)] $((P \rightarrow Q) \land P) \rightarrow Q$
+    \item[b)] $P \land Q \rightarrow P$
+    \item[c)] $\lnot (P \land Q) \land P \rightarrow \lnot Q$
+    \item[d)] $(P \rightarrow Q \land R) \rightarrow ((P \rightarrow Q) \land (P \rightarrow R))$
+    \item[e)] $((P \land Q) \leftrightarrow P) \rightarrow (P \rightarrow Q)$
+\end{itemize}
+\end{bt}
+
+\begin{loigiai}
+\begin{itemize}
+    \item[a)] 
+    \begin{itemize}
+        \item \textbf{Lập bảng chân trị:}
+        \begin{center}
+            \begin{tabular}{|c|c|c|c|c|}
+                \hline
+                $P$ & $Q$ & $P \rightarrow Q$ & $((P \rightarrow Q) \land P)$ & $((P \rightarrow Q) \land P) \rightarrow Q$ \\
+                \hline
+                T & T & T & T & T \\
+                T & F & F & F & T \\
+                F & T & T & F & T \\
+                F & F & T & F & T \\
+                \hline
+            \end{tabular}
+        \end{center}
+        Biểu thức luôn đúng.
+        \item \textbf{Dùng luật logic:}
+        \[
+        ((P \rightarrow Q) \land P) \rightarrow Q \equiv (\lnot P \lor Q) \land P \rightarrow Q \equiv Q
+        \]
+    \end{itemize}
+
+    \item[b)] Tương tự, ta có thể lập bảng chân trị hoặc áp dụng luật logic để chứng minh.
+\end{itemize}
+\end{loigiai}
+
+\newpage
+
+
+\end{document}
