@@ -1,0 +1,401 @@
+%%9:3:51 27/9/2014 -VieTeX creates D:\Loan\tex\New folder\TCC1\bo de YL\th.tex
+ \NeedsTeXFormat{LaTeX2e}
+\documentclass[11pt, oneside,openright,a4paper]{book}
+\usepackage[pctex32]{graphics}
+%\usepackage{vnfonts}
+%\usepackage[vietnam,english]{babel}
+%\usepackage[tcvn]{vietnam}
+\usepackage{amsmath}
+\usepackage[mathscr]{eucal}
+\usepackage{amsfonts}
+\usepackage{amsmath,amsxtra,latexsym,amsthm, amssymb, amscd}
+\usepackage[utf8]{vietnam}
+\usepackage{fancyhdr}
+%\input setbmp
+%\usecolortheme{beaver}
+%\usetheme{Madrid}
+%-------------------Canh lề trang-----------
+\voffset=-0.5in
+\hoffset=0.2in
+\parskip 5pt
+\setlength{\evensidemargin}{0.2in}
+\setlength{\oddsidemargin}{0.2in}
+\setlength{\marginparsep}{0.01in}
+\setlength{\topmargin}{0.01in}
+\setlength{\headsep}{0.3in}
+\setlength{\footskip}{0.6in}
+\setlength{\marginparwidth}{0.01in}
+\setlength{\headheight}{0.2in}
+\setlength{\textheight}{9.3in}%{9.5in}
+\setlength{\textwidth}{6.2in}
+\setlength{\hfuzz}{2pt}
+
+%------------------------------------------------------
+
+\usepackage{graphicx}
+\usepackage{color}
+\newtheorem{dl}{Định lý}[chapter]
+\newtheorem{dn}{Định nghĩa}[chapter]
+\newtheorem{bt}{Bài }[section]
+\newtheorem{md}{Mệnh đề}[chapter]
+\newtheorem{bd}{Bổ đề}[chapter]
+\newtheorem{hq}{Hệ quả}[chapter]
+\newtheorem{nx}{Nhận xét}[chapter]
+\newtheorem{cy}{Chú ý}[chapter]
+\newtheorem{vd}{Ví dụ}[chapter]
+
+
+%\pagestyle{fancy}
+\def\B{\mathscr B}
+\def\one{\mathbf 1}
+\def\RR{{\mathbb R}}
+\def\LL{{\mathbb L}}
+\def\m{{\mathbb M}}
+\def\p{{\mathbb P}}
+\DeclareMathOperator{\const}{const}
+
+%----------them cua em Giang------------------------------
+\renewcommand{\chaptername}{Chapter}
+\renewcommand{\contentsname}{\centerline{Mc}}
+\renewcommand{\bibname}{\centerline{References}}
+\renewcommand\appendixname{Phc} 
+\renewcommand{\proofname}{Prove}
+\renewcommand{\baselinestretch}{1.5} 
+%---------------------------------------------------------
+%---------------------------Heading and foot--------------
+\makeatletter	   
+\renewcommand{\ps@plain}{
+    \renewcommand{\@oddfoot}{\makebox[\textwidth]{$-\;\thepage\;-$}} 
+   \renewcommand{\@oddhead}{\empty} 
+    \renewcommand{\@evenhead}{\@oddhead}    
+ \renewcommand{\@evenfoot}{\@oddfoot}     }
+
+\makeatother    
+\pagestyle{plain}
+
+\pagestyle{plain}
+\renewcommand{\bibname}{\chapf  References}
+\renewcommand{\contentsname}{\chapf References}
+%\renewcommand{\thechapter}{\arabic{chapter}}
+\renewcommand{\thechapter}{\arabic{section}}
+%\renewcommand{\thechapter}{\arabic{subsection}}
+%\renewcommand{\thesection}{\arabic{section}.\arabic{subsection}.}
+\renewcommand{\thesection}{\arabic{section}.}
+\renewcommand{\thesubsection}{\arabic{subsection}.}
+%\renewcommand{\thesection}{\arabic{chapter}.\arabic{section}.}
+%\renewcommand{\thesubsection}{\arabic{chapter}.\arabic{section}.\arabic{subsection}.}
+\renewcommand{\thebd}{\arabic{section}.\arabic {bd}}
+\renewcommand{\themd}{\arabic{section}.\arabic{md}}
+\renewcommand{\thedl}{\arabic{section}.\arabic{dl}}
+\renewcommand{\thedn}{\arabic{section}.\arabic{dn}}
+\renewcommand{\thecy}{\arabic{section}.\arabic{cy}}
+\renewcommand{\thevd}{\arabic{section}.\arabic{vd}}
+\renewcommand{\thenx}{\arabic{section}.\arabic{nx}}
+\renewcommand{\thehq}{\arabic{section}.\arabic{hq}}
+\renewcommand{\thebt}{\arabic{section}.\arabic{bt}}
+
+\renewcommand{\theequation}{\arabic{section}.\arabic{equation}}
+\renewcommand{\thefootnote}{(\arabic{footnote})}
+
+%---------------------------------------------------------
+
+%\renewcommand{\chaptermark}[1]{\markboth{\small\chaptername\ \thechapter.\ #1}{}}
+\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter.\ #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\small\thesection.\ #1}{}}
+\renewcommand{\chaptername}{Chapter}
+\renewcommand{\contentsname}{Mc}
+
+\renewcommand\bibname{thebibliography} %{T֩ li׵ tham khׯ}
+
+\newcommand{\ov}{\overrightarrow}
+\newcommand{\ovl}{\overline}
+
+\footskip=30pt
+\begin{document}
+\large
+%\setcounter{page}{3}
+%\tableofcontents
+%\thispagestyle{empty}
+%\input kihieu
+%\thispagestyle{empty}
+\newpage
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\pagestyle{fancy}
+\fancyhf{}
+%\rhead{Bộ môn Toán}
+\lhead{Đại học Phenikaa- Trường công nghệ thông tin}
+\rfoot{\thepage}
+\lfoot{Toán rởi rạc- 3TC}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\hspace{0.5 cm}
+\begin{center}
+\textbf{BÀI TẬP MÔN TOÁN RỜI RẠC}\\
+
+\textbf{\underline{NĂM HỌC 2024 -- 2025}}\\
+\end{center}
+
+\section[Phần 1. Kiến thức cơ sở (Logic)(8 tiết)]{ Phần 1. Kiến thức cơ sở (Logic)(8 tiết)}
+\begin{bt}
+Chứng minh các biểu thức sau là hằng đúng bằng hai cách (lập bảng chân trị và dùng luật logic): 
+ \begin{itemize}
+ \item[a)] $((P \rightarrow Q) \land P) \rightarrow Q;$ 
+\item[b)] $P \land Q \rightarrow P;$ 
+ \item[c)] $\lnot (P \land Q) \land P \rightarrow \lnot Q;$
+ \item[d)] $(P \rightarrow Q \land R) \rightarrow ((P \rightarrow Q) \land (P \rightarrow R));$ 
+\item[d)] $((P \land Q) \leftrightarrow P) \rightarrow (P \rightarrow Q).$
+ \end{itemize}
+\end{bt}
+\begin{bt}
+ Sử dụng quy tắc suy diễn trong mệnh đề logic
+    \begin{itemize}
+     \item[a)] Chứng minh mệnh đề sau là hằng đúng: 
+           $$((X_1 \rightarrow X_2) \land (\lnot X_3 \lor X_4) \land (X_1 \lor X_3)) \rightarrow (\lnot X_2 \rightarrow X_4).$$
+        \item[b)] Kiểm tra xem suy luận của đoạn văn sau có đúng hay không?\\
+        ``Nếu được thưởng cuối năm An sẽ đi Đà Lạt. Nếu đi Đà Lạt thì An sẽ thăm Thiền Viện. Mà An không thăm Thiền Viện. Vậy An không được thưởng cuối năm''
+    \end{itemize}
+          
+\end{bt}
+\begin{bt}
+ Dịch các câu thành biểu thức logic
+ \begin{itemize}
+ \item[a)] Tất cả chim ruồi đều có màu sắc sặc sỡ.
+ \item[b)] Không có con chim lớn nào sống bằng mật ong.
+ \item[c)] Các chim lớn không sống bằng mật ong đều có màu xám.
+ \item[d)] Chim ruồi đều nhỏ.
+ \end{itemize}
+\end{bt}
+\begin{bt}
+Dịch các câu thành biểu thức logic
+Cho $L(x,y)$ là câu ``$x$ yêu $y$'', với không gian của của $x$ và $y$ là tập hợp mọi người trên thế giới. Hãy dùng các lượng từ để diễn đạt các câu sau:
+    \begin{itemize}
+     \item[a)] Mọi người đều yêu mai.
+        \item[b)] Mọi người đều yêu một ai đó.
+        \item[c)] Có một người mà tất cả mọi người đều yêu.
+        \item[d)] Không có ai yêu tất cả mọi người.
+        \item[e)] Có một người ế. (Gợi ý: Họ không yêu ai hoặc không ai yêu họ)
+        \item[f)] Có một người mà Nam không yêu.
+        \item[g)] Có đúng một người mà tất cả mọi người đều yêu.
+        \item[h)] Có đúng hai người mà Tuấn yêu.
+    \end{itemize}
+\end{bt}
+\begin{bt}
+Mô hình suy diễn dưới đây trên trường $\Omega$ có đúng không?
+\begin{itemize}
+\item[a)]$(\forall x) (P(x) \rightarrow (Q(x) \land R(x))).$
+\item[b)] $\begin{matrix}
+       (\forall x) (P(x) \land F(x))\\
+    \overline{\therefore (\forall x)(R(x) \land F(x))}.
+\end{matrix}.$
+\end{itemize}
+
+\end{bt}
+\begin{bt}
+Chứng minh các cặp mệnh đề sau:
+\begin{itemize}
+\item[a)] $(P \rightarrow Q) \rightarrow R$ và $P \rightarrow (Q \rightarrow R)$ không tương đương.
+    \item[b)] $\lnot P \leftrightarrow Q$ và $ P \leftrightarrow \lnot Q$ tương đương.
+    \item[c)] $\lnot (P \leftrightarrow Q)$ và $ \lnot P \leftrightarrow Q$ tương đương.
+    \item[d)] $\lnot \exists x \forall y P(x,y)$ và $\forall x \exists y \lnot P(x,y)$ tương đương.
+    \item[e)] $(\forall x P(x)) \land A$ và $\forall x (P(X) \land A)$ tương đương, ($A$ là mệnh đề không có liên quan với lượng từ nào).
+    \item[f)] $(\exists x P(x)) \land A$ và $\exists x (P(X) \land A)$ tương đương, ($A$ là mệnh đề không có liên quan với lượng từ nào).
+\end{itemize}
+
+\end{bt}
+\begin{bt}
+\begin{itemize}
+\item[a)] Suy luận dưới đây có đúng không?
+    $$\begin{matrix}
+        (\lnot X_1 \lor X_2) \rightarrow X_3\\
+        X_3 \rightarrow (X_4 \lor X_5)\\
+        \lnot X_4 \land \lnot X_6\\
+        \lnot X_6 \rightarrow \lnot X_5\\
+        \overline{\qquad \qquad \therefore X_1 \qquad \qquad}
+    \end{matrix}.$$
+    \item[b)] Dùng mô hình suy diễn, kiểm tra xem biểu thức logic sau đúng hay sai?
+    $$((P \rightarrow ((Q \lor R) \land S)) \land P) \rightarrow ((Q \lor R) \land S).$$
+\end{itemize}
+\end{bt}
+\begin{bt}
+Cho $P(x), Q(x), R(x), S(x)$ tướng ứng với các câu ``$x$ là một đứa bé'', ``$x$ tư duy logic'', ``$x$ có khả năng cai quản một con cá sấu'', ``$x$ bị coi thường''. Giả sử rằng không gian là tập hợp tất cả mọi người. Hãy dùng các lượng từ, cá liên từ logic cùng với $P(x), Q(x), R(x), S(x)$ để diễn đạt các câu sau:
+\begin{itemize}
+\item[a)] Những đứa trẻ không tư duy logic.
+\item[b)] Không ai bị coi thường nếu cai quản được cá sấu.
+\item[c)] Những người không tư duy logic hay bị coi thường.
+\item[d)] Những đứa bé không cai quản được cá sấu.
+\item[e)] (d) có suy ra được từ (a), (b) và (c) không?
+\end{itemize}
+    
+\end{bt}
+
+
+\newpage
+\section[Phần 2. Thuật toán (12 tiết)]{Phần 2:Thuật toán (12 tiết)}
+\begin{bt}
+
+\end{bt}
+\begin{bt}
+
+\end{bt}
+\begin{bt}
+
+\end{bt}
+\begin{bt}
+
+\end{bt}
+\begin{bt}
+
+\end{bt}
+\begin{bt}
+
+\end{bt}
+\begin{bt}
+
+\end{bt}
+\begin{bt}
+
+\end{bt}
+
+\newpage
+\section[Phần 3. Phép đếm (8 tiết)]{Phần 3: Phép đếm (8 tiết)}
+\begin{bt}
+
+\end{bt}
+\begin{bt}
+
+\end{bt}
+\begin{bt}
+
+\end{bt}
+\begin{bt}
+
+\end{bt}
+\begin{bt}
+
+\end{bt}
+\begin{bt}
+
+\end{bt}
+\begin{bt}
+
+\end{bt}
+\begin{bt}
+
+\end{bt}
+\newpage
+\section[Phần 4. Thuật toán (4 tiết)]{Phần 4: Thuật toán (4 tiết)}
+
+ \begin{bt}
+
+\end{bt}
+\begin{bt}
+
+\end{bt}
+\begin{bt}
+
+\end{bt}
+\begin{bt}
+
+\end{bt}
+\begin{bt}
+
+\end{bt}
+\begin{bt}
+
+\end{bt}
+\begin{bt}
+
+\end{bt}
+\begin{bt}
+
+\end{bt}
+ \newpage
+\section[Phần 5. Đồ thị (8 tiết)]{Phần 5: Đồ thị (8 tiết)}
+
+ \begin{bt}
+
+\end{bt}
+\begin{bt}
+
+\end{bt}
+\begin{bt}
+
+\end{bt}
+\begin{bt}
+
+\end{bt}
+\begin{bt}
+
+\end{bt}
+\begin{bt}
+
+\end{bt}
+\begin{bt}
+
+\end{bt}
+\begin{bt}
+
+\end{bt}
+
+ \newpage
+\section[Phần 6. Cây (8 tiết)]{Phần 6: Cây (8 tiết)}
+
+ \begin{bt}
+
+\end{bt}
+\begin{bt}
+
+\end{bt}
+\begin{bt}
+
+\end{bt}
+\begin{bt}
+
+\end{bt}
+\begin{bt}
+
+\end{bt}
+\begin{bt}
+
+\end{bt}
+\begin{bt}
+
+\end{bt}
+\begin{bt}
+
+\end{bt}
+
+ \newpage
+\section[Phần 7. Mô hình tính toán (8 tiết)]{Phần 7: Mô hình tính toán (8 tiết)}
+
+\begin{bt}
+
+\end{bt}
+\begin{bt}
+
+\end{bt}
+
+\begin{bt}
+
+\end{bt}
+\begin{bt}
+
+\end{bt}
+\begin{bt}
+
+\end{bt}
+\begin{bt}
+
+\end{bt}
+\begin{bt}
+
+\end{bt}
+\begin{bt}
+
+\end{bt}
+\end{document}
+
+%%11:25:17 30/9/2014Last Modification of contents
+%%12:20:9 11/10/2018Last Modification of contents
