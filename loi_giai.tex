@@ -87,5 +87,545 @@ Chứng minh các biểu thức sau là hằng đúng bằng hai cách (lập b�
 
 \newpage
 
+\section[Phần 1. Kiến thức cơ sở (Logic)(8 tiết)]{ Phần 1. Kiến thức cơ sở (Logic)(8 tiết)}
+\begin{bt}
+    Chứng minh các biểu thức sau là hằng đúng bằng hai cách (lập bảng chân trị và dùng luật logic): 
+     \begin{itemize}
+     \item[a)] $((P \rightarrow Q) \land P) \rightarrow Q;$ 
+     \item[b)] $P \land Q \rightarrow P;$ 
+     \item[c)] $\lnot (P \land Q) \land P \rightarrow \lnot Q;$
+     \item[d)] $(P \rightarrow Q \land R) \rightarrow ((P \rightarrow Q) \land (P \rightarrow R));$ 
+     \item[e)] $((P \land Q) \leftrightarrow P) \rightarrow (P \rightarrow Q).$ (Câu này ban đầu ghi là d)
+     \end{itemize}
+    \end{bt}
+    
+    \begin{loigiai}
+    \begin{itemize}
+      \item[a)] $((P \rightarrow Q) \land P) \rightarrow Q;$
+        \begin{itemize}
+            \item \textbf{Lập bảng chân trị:}
+            \begin{center}
+            \begin{tabular}{|c|c|c|c|c|}
+            \hline
+            $P$ & $Q$ & $P \rightarrow Q$ & $(P \rightarrow Q) \land P$ & $((P \rightarrow Q) \land P) \rightarrow Q$ \\
+            \hline
+            T & T & T & T & T \\
+            T & F & F & F & T \\
+            F & T & T & F & T \\
+            F & F & T & F & T \\
+            \hline
+            \end{tabular}
+            \end{center}
+            Cột cuối cùng của bảng chân trị toàn giá trị T (True), do đó biểu thức là hằng đúng.
+            \item \textbf{Dùng luật logic:}
+            \begin{align*} ((P \rightarrow Q) \land P) \rightarrow Q &\equiv ((\lnot P \lor Q) \land P) \rightarrow Q \quad \text{(Luật kéo theo)} \\ &\equiv ( (P \land \lnot P) \lor (P \land Q) ) \rightarrow Q \quad \text{(Luật phân phối)} \\ &\equiv (F \lor (P \land Q) ) \rightarrow Q \quad \text{(Luật mâu thuẫn)} \\ &\equiv (P \land Q) \rightarrow Q \quad \text{(Luật đồng nhất)} \\ &\equiv \lnot (P \land Q) \lor Q \quad \text{(Luật kéo theo)} \\ &\equiv (\lnot P \lor \lnot Q) \lor Q \quad \text{(Luật De Morgan)} \\ &\equiv \lnot P \lor (\lnot Q \lor Q) \quad \text{(Luật kết hợp)} \\ &\equiv \lnot P \lor T \quad \text{(Luật loại trừ)} \\ &\equiv T \quad \text{(Luật thống trị)}\end{align*}
+            Biểu thức tương đương với T (True), do đó là hằng đúng.
+        \end{itemize}
+    
+      \item[b)] $P \land Q \rightarrow P;$
+        \begin{itemize}
+            \item \textbf{Lập bảng chân trị:}
+            \begin{center}
+            \begin{tabular}{|c|c|c|c|}
+            \hline
+            $P$ & $Q$ & $P \land Q$ & $P \land Q \rightarrow P$ \\
+            \hline
+            T & T & T & T \\
+            T & F & F & T \\
+            F & T & F & T \\
+            F & F & F & T \\
+            \hline
+            \end{tabular}
+            \end{center}
+            Cột cuối cùng của bảng chân trị toàn giá trị T (True), do đó biểu thức là hằng đúng.
+            \item \textbf{Dùng luật logic:}
+            \begin{align*} P \land Q \rightarrow P &\equiv \lnot (P \land Q) \lor P \quad \text{(Luật kéo theo)} \\ &\equiv (\lnot P \lor \lnot Q) \lor P \quad \text{(Luật De Morgan)} \\ &\equiv (P \lor \lnot P) \lor \lnot Q \quad \text{(Luật giao hoán và kết hợp)} \\ &\equiv T \lor \lnot Q \quad \text{(Luật loại trừ)} \\ &\equiv T \quad \text{(Luật thống trị)}\end{align*}
+            Biểu thức tương đương với T (True), do đó là hằng đúng.
+        \end{itemize}
+    
+      \item[c)] $\lnot (P \land Q) \land P \rightarrow \lnot Q;$
+        \begin{itemize}
+            \item \textbf{Lập bảng chân trị:}
+            \begin{center}
+            \begin{tabular}{|c|c|c|c|c|c|c|}
+            \hline
+            $P$ & $Q$ & $P \land Q$ & $\lnot (P \land Q)$ & $\lnot (P \land Q) \land P$ & $\lnot Q$ & $\lnot (P \land Q) \land P \rightarrow \lnot Q$ \\
+            \hline
+            T & T & T & F & F & F & T \\
+            T & F & F & T & T & T & T \\
+            F & T & F & T & F & F & T \\
+            F & F & F & T & F & T & T \\
+            \hline
+            \end{tabular}
+            \end{center}
+            Cột cuối cùng của bảng chân trị toàn giá trị T (True), do đó biểu thức là hằng đúng.
+            \item \textbf{Dùng luật logic:}
+            \begin{align*} \lnot (P \land Q) \land P \rightarrow \lnot Q &\equiv ((\lnot P \lor \lnot Q) \land P) \rightarrow \lnot Q \quad \text{(Luật De Morgan)} \\ &\equiv ((P \land \lnot P) \lor (P \land \lnot Q)) \rightarrow \lnot Q \quad \text{(Luật phân phối)} \\ &\equiv (F \lor (P \land \lnot Q)) \rightarrow \lnot Q \quad \text{(Luật mâu thuẫn)} \\ &\equiv (P \land \lnot Q) \rightarrow \lnot Q \quad \text{(Luật đồng nhất)} \\ &\equiv \lnot (P \land \lnot Q) \lor \lnot Q \quad \text{(Luật kéo theo)} \\ &\equiv (\lnot P \lor \lnot (\lnot Q)) \lor \lnot Q \quad \text{(Luật De Morgan)} \\ &\equiv (\lnot P \lor Q) \lor \lnot Q \quad \text{(Luật phủ định kép)} \\ &\equiv \lnot P \lor (Q \lor \lnot Q) \quad \text{(Luật kết hợp)} \\ &\equiv \lnot P \lor T \quad \text{(Luật loại trừ)} \\ &\equiv T \quad \text{(Luật thống trị)}\end{align*}
+            Biểu thức tương đương với T (True), do đó là hằng đúng.
+        \end{itemize}
+    
+      \item[d)] $(P \rightarrow Q \land R) \rightarrow ((P \rightarrow Q) \land (P \rightarrow R));$
+        \begin{itemize}
+            \item \textbf{Lập bảng chân trị:}
+            \begin{center}
+            \tiny % làm cho bảng nhỏ hơn nếu nó quá rộng
+            \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+            \hline
+            $P$ & $Q$ & $R$ & $Q \land R$ & $P \rightarrow (Q \land R)$ & $P \rightarrow Q$ & $P \rightarrow R$ & $(P \rightarrow Q) \land (P \rightarrow R)$ & $(P \rightarrow Q \land R) \rightarrow ((P \rightarrow Q) \land (P \rightarrow R))$ \\
+            \hline
+            T & T & T & T & T & T & T & T & T \\
+            T & T & F & F & F & T & F & F & T \\
+            T & F & T & F & F & F & T & F & T \\
+            T & F & F & F & F & F & F & F & T \\
+            F & T & T & T & T & T & T & T & T \\
+            F & T & F & F & T & T & T & T & T \\
+            F & F & T & F & T & T & T & T & T \\
+            F & F & F & F & T & T & T & T & T \\
+            \hline
+            \end{tabular}
+            \end{center}
+            Cột cuối cùng của bảng chân trị toàn giá trị T (True), do đó biểu thức là hằng đúng.
+            \item \textbf{Dùng luật logic:}
+            Ta biết rằng $A \rightarrow (B \land C) \equiv (A \rightarrow B) \land (A \rightarrow C)$.
+            Đặt $X = P \rightarrow (Q \land R)$ và $Y = (P \rightarrow Q) \land (P \rightarrow R)$.
+            Ta có:
+            \begin{align*} P \rightarrow (Q \land R) &\equiv \lnot P \lor (Q \land R) \quad \text{(Luật kéo theo)} \end{align*}
+            Và:
+            \begin{align*} (P \rightarrow Q) \land (P \rightarrow R) &\equiv (\lnot P \lor Q) \land (\lnot P \lor R) \quad \text{(Luật kéo theo)} \\ &\equiv \lnot P \lor (Q \land R) \quad \text{(Luật phân phối ngược)} \end{align*}
+            Vì $P \rightarrow (Q \land R) \equiv \lnot P \lor (Q \land R)$ và $(P \rightarrow Q) \land (P \rightarrow R) \equiv \lnot P \lor (Q \land R)$,
+            nên $P \rightarrow (Q \land R) \equiv (P \rightarrow Q) \land (P \rightarrow R)$.
+            Do đó, biểu thức $(P \rightarrow Q \land R) \rightarrow ((P \rightarrow Q) \land (P \rightarrow R))$ có dạng $X \rightarrow X$.
+            Mà $X \rightarrow X \equiv \lnot X \lor X \equiv T$.
+            Vậy biểu thức là hằng đúng.
+        \end{itemize}
+    
+      \item[e)] $((P \land Q) \leftrightarrow P) \rightarrow (P \rightarrow Q).$
+        \begin{itemize}
+            \item \textbf{Lập bảng chân trị:}
+            \begin{center}
+            \tiny % làm cho bảng nhỏ hơn nếu nó quá rộng
+            \begin{tabular}{|c|c|c|c|c|c|c|c|}
+            \hline
+            $P$ & $Q$ & $P \land Q$ & $(P \land Q) \rightarrow P$ & $P \rightarrow (P \land Q)$ & $(P \land Q) \leftrightarrow P$ & $P \rightarrow Q$ & $((P \land Q) \leftrightarrow P) \rightarrow (P \rightarrow Q)$ \\
+            \hline
+            T & T & T & T & T & T & T & T \\
+            T & F & F & T & F & F & F & T \\
+            F & T & F & T & T & T & T & T \\ % (F & T): P&Q=F. (F<->F)=T. (F->T)=T. T->T = T
+            F & F & F & T & T & T & T & T \\ % (F & F): P&Q=F. (F<->F)=T. (F->F)=T. T->T = T
+            \hline
+            \end{tabular}
+            \end{center}
+            Kiểm tra lại hàng F, T: $P \land Q$ là F. $(P \land Q) \leftrightarrow P$ là $F \leftrightarrow F$, là T. $P \rightarrow Q$ là $F \rightarrow T$, là T. Vậy $T \rightarrow T$ là T.
+            Cột cuối cùng của bảng chân trị toàn giá trị T (True), do đó biểu thức là hằng đúng.
+            \item \textbf{Dùng luật logic:}
+            \begin{align*} ((P \land Q) \leftrightarrow P) \rightarrow (P \rightarrow Q) &\equiv \lnot ((P \land Q) \leftrightarrow P) \lor (P \rightarrow Q) \quad \text{(Luật kéo theo)} \\ ((P \land Q) \leftrightarrow P) &\equiv ((P \land Q) \rightarrow P) \land (P \rightarrow (P \land Q)) \\ &\equiv (\lnot(P \land Q) \lor P) \land (\lnot P \lor (P \land Q)) \\ &\equiv ((\lnot P \lor \lnot Q) \lor P) \land ((\lnot P \lor P) \land (\lnot P \lor Q)) \quad \text{(De Morgan, Phân phối)} \\ &\equiv ( (P \lor \lnot P) \lor \lnot Q) \land (T \land (\lnot P \lor Q)) \quad \text{(Giao hoán, Kết hợp, Loại trừ)} \\ &\equiv (T \lor \lnot Q) \land (\lnot P \lor Q) \quad \text{(Luật thống trị, Đồng nhất)} \\ &\equiv T \land (\lnot P \lor Q) \quad \text{(Luật thống trị)} \\ &\equiv \lnot P \lor Q \quad \text{(Luật đồng nhất)} \end{align*}
+            Vậy, biểu thức ban đầu trở thành:
+            \begin{align*} (\lnot P \lor Q) \rightarrow (P \rightarrow Q) &\equiv (\lnot P \lor Q) \rightarrow (\lnot P \lor Q) \end{align*}
+            Đặt $X = \lnot P \lor Q$. Biểu thức có dạng $X \rightarrow X$.
+            $X \rightarrow X \equiv \lnot X \lor X \equiv T$.
+            Biểu thức tương đương với T (True), do đó là hằng đúng.
+        \end{itemize}
+    \end{itemize}
+    \end{loigiai}
+    
+    \begin{bt}
+    Sử dụng quy tắc suy diễn trong mệnh đề logic
+     \begin{itemize}
+      \item[a)] Chứng minh mệnh đề sau là hằng đúng: 
+      $$((X_1 \rightarrow X_2) \land (\lnot X_3 \lor X_4) \land (X_1 \lor X_3)) \rightarrow (\lnot X_2 \rightarrow X_4).$$
+      \item[b)] Kiểm tra xem suy luận của đoạn văn sau có đúng hay không?\\
+      ``Nếu được thưởng cuối năm An sẽ đi Đà Lạt. Nếu đi Đà Lạt thì An sẽ thăm Thiền Viện. Mà An không thăm Thiền Viện. Vậy An không được thưởng cuối năm''
+     \end{itemize}
+    \end{bt}
+    
+    \begin{loigiai}
+    \begin{itemize}
+        \item[a)] Chứng minh mệnh đề sau là hằng đúng: 
+        $$((X_1 \rightarrow X_2) \land (\lnot X_3 \lor X_4) \land (X_1 \lor X_3)) \rightarrow (\lnot X_2 \rightarrow X_4).$$
+        Ta sử dụng phương pháp chứng minh có điều kiện. Giả sử vế trái của phép kéo theo lớn là đúng, và ta cần chứng minh vế phải cũng đúng.
+        Các tiền đề:
+        \begin{enumerate}
+            \item $X_1 \rightarrow X_2$
+            \item $\lnot X_3 \lor X_4$ (tương đương $X_3 \rightarrow X_4$)
+            \item $X_1 \lor X_3$
+        \end{enumerate}
+        Ta cần chứng minh $\lnot X_2 \rightarrow X_4$. Ta lại dùng chứng minh có điều kiện, giả sử $\lnot X_2$ đúng.
+        \begin{enumerate}
+            \item[4.] $\lnot X_2$ (Giả thiết cho chứng minh $\lnot X_2 \rightarrow X_4$)
+            \item[5.] $\lnot X_1$ (Từ 1 và 4, Modus Tollens)
+            \item[6.] $X_3$ (Từ 3 và 5, Tam đoạn luận loại trừ - Disjunctive Syllogism: $(A \lor B) \land \lnot A \rightarrow B$)
+            \item[7.] $X_4$ (Từ 2 và 6, Tam đoạn luận loại trừ: $(\lnot A \lor B) \land A \rightarrow B$, vì $\lnot X_3 \lor X_4$ và $X_3$)
+        \end{enumerate}
+        Vì từ giả thiết $\lnot X_2$ ta suy ra được $X_4$, nên $\lnot X_2 \rightarrow X_4$ là đúng.
+        Do đó, mệnh đề ban đầu $((X_1 \rightarrow X_2) \land (\lnot X_3 \lor X_4) \land (X_1 \lor X_3)) \rightarrow (\lnot X_2 \rightarrow X_4)$ là hằng đúng.
+    
+        \item[b)] Kiểm tra xem suy luận của đoạn văn sau có đúng hay không?\\
+        ``Nếu được thưởng cuối năm An sẽ đi Đà Lạt. Nếu đi Đà Lạt thì An sẽ thăm Thiền Viện. Mà An không thăm Thiền Viện. Vậy An không được thưởng cuối năm''
+        
+        Đặt các mệnh đề:
+        $P$: An được thưởng cuối năm.
+        $Q$: An đi Đà Lạt.
+        $R$: An thăm Thiền Viện.
+    
+        Các tiền đề được phát biểu là:
+        \begin{enumerate}
+            \item $P \rightarrow Q$
+            \item $Q \rightarrow R$
+            \item $\lnot R$
+        \end{enumerate}
+        Kết luận cần kiểm tra: $\lnot P$.
+    
+        Sử dụng các quy tắc suy diễn:
+        \begin{enumerate}
+            \item[4.] $P \rightarrow R$ (Từ 1 và 2, Quy tắc bắc cầu - Hypothetical Syllogism)
+            \item[5.] $\lnot P$ (Từ 4 và 3, Quy tắc Modus Tollens)
+        \end{enumerate}
+        Suy luận là \textbf{đúng}.
+    \end{itemize}
+    \end{loigiai}
+    
+    \begin{bt}
+    Dịch các câu thành biểu thức logic
+    \begin{itemize}
+    \item[a)] Tất cả chim ruồi đều có màu sắc sặc sỡ.
+    \item[b)] Không có con chim lớn nào sống bằng mật ong.
+    \item[c)] Các chim lớn không sống bằng mật ong đều có màu xám.
+    \item[d)] Chim ruồi đều nhỏ.
+    \end{itemize}
+    \end{bt}
+    
+    \begin{loigiai}
+    Đặt các vị từ (predicates) với không gian là tập hợp các loài chim (hoặc động vật nói chung tùy ngữ cảnh):
+    \begin{itemize}
+        \item $H(x)$: "$x$ là chim ruồi"
+        \item $C(x)$: "$x$ có màu sắc sặc sỡ"
+        \item $L(x)$: "$x$ là con chim lớn"
+        \item $M(x)$: "$x$ sống bằng mật ong"
+        \item $G(x)$: "$x$ có màu xám"
+        \item $S(x)$: "$x$ nhỏ" (có thể định nghĩa $S(x) \equiv \lnot L(x)$ nếu "nhỏ" là phủ định hoàn toàn của "lớn" trong ngữ cảnh này)
+    \end{itemize}
+    \begin{itemize}
+     \item[a)] Tất cả chim ruồi đều có màu sắc sặc sỡ.
+        $$ \forall x (H(x) \rightarrow C(x)) $$
+     \item[b)] Không có con chim lớn nào sống bằng mật ong.
+        $$ \forall x (L(x) \rightarrow \lnot M(x)) $$
+        Hoặc tương đương:
+        $$ \lnot \exists x (L(x) \land M(x)) $$
+     \item[c)] Các chim lớn không sống bằng mật ong đều có màu xám.
+        $$ \forall x ((L(x) \land \lnot M(x)) \rightarrow G(x)) $$
+     \item[d)] Chim ruồi đều nhỏ.
+        $$ \forall x (H(x) \rightarrow S(x)) $$
+        Nếu $S(x) \equiv \lnot L(x)$:
+        $$ \forall x (H(x) \rightarrow \lnot L(x)) $$
+    \end{itemize}
+    \end{loigiai}
+    
+    \begin{bt}
+    Dịch các câu thành biểu thức logic
+    Cho $L(x,y)$ là câu ``$x$ yêu $y$'', với không gian của của $x$ và $y$ là tập hợp mọi người trên thế giới. Hãy dùng các lượng từ để diễn đạt các câu sau:
+     \begin{itemize}
+      \item[a)] Mọi người đều yêu Mai.
+      \item[b)] Mọi người đều yêu một ai đó.
+      \item[c)] Có một người mà tất cả mọi người đều yêu.
+      \item[d)] Không có ai yêu tất cả mọi người.
+      \item[e)] Có một người ế. (Gợi ý: Họ không yêu ai hoặc không ai yêu họ)
+      \item[f)] Có một người mà Nam không yêu.
+      \item[g)] Có đúng một người mà tất cả mọi người đều yêu.
+      \item[h)] Có đúng hai người mà Tuấn yêu.
+     \end{itemize}
+    \end{bt}
+    
+    \begin{loigiai}
+    Đặt "Mai" là hằng $m$, "Nam" là $n$, "Tuấn" là $t$.
+    \begin{itemize}
+        \item[a)] Mọi người đều yêu Mai.
+            $$ \forall x L(x, m) $$
+        \item[b)] Mọi người đều yêu một ai đó.
+            $$ \forall x \exists y L(x, y) $$
+        \item[c)] Có một người mà tất cả mọi người đều yêu.
+            $$ \exists y \forall x L(x, y) $$
+        \item[d)] Không có ai yêu tất cả mọi người.
+            $$ \lnot \exists x \forall y L(x, y) $$
+            Hoặc tương đương:
+            $$ \forall x \exists y \lnot L(x, y) $$
+        \item[e)] Có một người ế. (Họ không yêu ai hoặc không ai yêu họ)
+            $$ \exists x ((\forall y \lnot L(x,y)) \lor (\forall z \lnot L(z,x))) $$
+        \item[f)] Có một người mà Nam không yêu.
+            $$ \exists y \lnot L(n, y) $$
+        \item[g)] Có đúng một người mà tất cả mọi người đều yêu.
+            $$ \exists y (\forall x L(x, y) \land \forall z ((\forall w L(w, z)) \rightarrow z=y)) $$
+            Hoặc cách khác thường dùng:
+            $$ \exists y (\forall x L(x,y) \land \lnot \exists z (z \neq y \land \forall w L(w,z))) $$
+        \item[h)] Có đúng hai người mà Tuấn yêu.
+            $$ \exists y \exists z (y \neq z \land L(t,y) \land L(t,z) \land \forall w (L(t,w) \rightarrow (w=y \lor w=z))) $$
+    \end{itemize}
+    \end{loigiai}
+    
+    \begin{bt}
+    Mô hình suy diễn dưới đây trên trường $\Omega$ có đúng không?
+    \begin{itemize}
+    \item[a)]$(\forall x) (P(x) \rightarrow (Q(x) \land R(x))).$
+    \item[b)] $\begin{matrix}
+         (\forall x) (P(x) \land F(x))\\
+       \overline{\therefore (\forall x)(R(x) \land F(x))}.
+    \end{matrix}.$
+    \end{itemize}
+    \end{bt}
+    
+    \begin{loigiai}
+    \begin{itemize}
+    \item[a)]$(\forall x) (P(x) \rightarrow (Q(x) \land R(x))).$
+        Đây là một mệnh đề, không phải là một mô hình suy diễn hoàn chỉnh (thiếu kết luận nếu đây là tiền đề, hoặc thiếu tiền đề nếu đây là kết luận). Một mô hình suy diễn thường có dạng: Tiền đề 1, Tiền đề 2, ..., Tiền đề n / $\therefore$ Kết luận.
+        Nếu câu hỏi muốn hỏi mệnh đề này có thể đúng hay không, thì câu trả lời là có, tùy thuộc vào các vị từ $P, Q, R$ và trường $\Omega$. Ví dụ:
+        Cho $\Omega$ là tập hợp các số tự nhiên.
+        $P(x)$: "$x$ là số chia hết cho 6"
+        $Q(x)$: "$x$ là số chia hết cho 2"
+        $R(x)$: "$x$ là số chia hết cho 3"
+        Khi đó, $(\forall x) (P(x) \rightarrow (Q(x) \land R(x)))$ là mệnh đề "Với mọi số tự nhiên $x$, nếu $x$ chia hết cho 6 thì $x$ chia hết cho 2 và $x$ chia hết cho 3". Mệnh đề này đúng.
+    
+    \item[b)] $\begin{matrix}
+         (\forall x) (P(x) \land F(x))\\
+       \overline{\therefore (\forall x)(R(x) \land F(x))}.
+    \end{matrix}.$
+        Mô hình suy diễn này \textbf{không đúng}.
+        Tiền đề là: Với mọi $x$, $P(x)$ đúng và $F(x)$ đúng.
+        Kết luận là: Với mọi $x$, $R(x)$ đúng và $F(x)$ đúng.
+        Từ tiền đề, ta không có thông tin gì về $R(x)$. $R(x)$ có thể sai với mọi $x$ ngay cả khi $P(x)$ và $F(x)$ đúng.
+        
+        \textbf{Ví dụ phản chứng:}
+        Cho $\Omega$ là tập hợp người.
+        $P(x)$: "$x$ là giáo viên"
+        $F(x)$: "$x$ biết đọc"
+        $R(x)$: "$x$ là phi công"
+    
+        Tiền đề: $(\forall x) (P(x) \land F(x))$ nghĩa là "Mọi người $x$ đều là giáo viên và biết đọc". (Giả sử đây là một trường hợp đặc biệt mà tiền đề này đúng, ví dụ trong một hội nghị toàn giáo viên).
+        Kết luận: $(\forall x)(R(x) \land F(x))$ nghĩa là "Mọi người $x$ đều là phi công và biết đọc".
+        Rõ ràng, từ việc mọi người là giáo viên và biết đọc, không thể suy ra mọi người là phi công và biết đọc.
+    \end{itemize}
+    \end{loigiai}
+    
+    \begin{bt}
+    Chứng minh các cặp mệnh đề sau:
+    \begin{itemize}
+    \item[a)] $(P \rightarrow Q) \rightarrow R$ và $P \rightarrow (Q \rightarrow R)$ không tương đương.
+    \item[b)] $\lnot P \leftrightarrow Q$ và $ P \leftrightarrow \lnot Q$ tương đương.
+    \item[c)] $\lnot (P \leftrightarrow Q)$ và $ \lnot P \leftrightarrow Q$ tương đương.
+    \item[d)] $\lnot \exists x \forall y P(x,y)$ và $\forall x \exists y \lnot P(x,y)$ tương đương.
+    \item[e)] $(\forall x P(x)) \land A$ và $\forall x (P(x) \land A)$ tương đương, ($A$ là mệnh đề không có liên quan với lượng từ nào).
+    \item[f)] $(\exists x P(x)) \land A$ và $\exists x (P(x) \land A)$ tương đương, ($A$ là mệnh đề không có liên quan với lượng từ nào).
+    \end{itemize}
+    \end{bt}
+    
+    \begin{loigiai}
+    \begin{itemize}
+        \item[a)] $(P \rightarrow Q) \rightarrow R$ và $P \rightarrow (Q \rightarrow R)$ không tương đương.
+        Ta tìm một trường hợp chúng có giá trị chân lý khác nhau.
+        Xét $P=F, Q=T, R=F$:
+        $(P \rightarrow Q) \rightarrow R \equiv (F \rightarrow T) \rightarrow F \equiv T \rightarrow F \equiv F$.
+        $P \rightarrow (Q \rightarrow R) \equiv F \rightarrow (T \rightarrow F) \equiv F \rightarrow F \equiv T$.
+        Vì $F \neq T$, hai mệnh đề không tương đương.
+        (Bảng chân trị đầy đủ cũng cho thấy sự khác biệt ở các dòng $(F,T,F)$ và $(F,F,F)$).
+    
+        \item[b)] $\lnot P \leftrightarrow Q$ và $ P \leftrightarrow \lnot Q$ tương đương.
+        Cách 1: Dùng luật logic.
+        $\lnot P \leftrightarrow Q \equiv (\lnot P \rightarrow Q) \land (Q \rightarrow \lnot P)$
+        $\equiv (\lnot(\lnot P) \lor Q) \land (\lnot Q \lor \lnot P)$
+        $\equiv (P \lor Q) \land (\lnot P \lor \lnot Q)$.
+    
+        $P \leftrightarrow \lnot Q \equiv (P \rightarrow \lnot Q) \land (\lnot Q \rightarrow P)$
+        $\equiv (\lnot P \lor \lnot Q) \land (\lnot(\lnot Q) \lor P)$
+        $\equiv (\lnot P \lor \lnot Q) \land (Q \lor P)$.
+        Sử dụng luật giao hoán: $(Q \lor P) \land (\lnot P \lor \lnot Q) \equiv (P \lor Q) \land (\lnot P \lor \lnot Q)$.
+        Cả hai đều tương đương với $(P \lor Q) \land (\lnot P \lor \lnot Q)$, vậy chúng tương đương.
+    
+        Cách 2: Bảng chân trị.
+        \begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        $P$ & $Q$ & $\lnot P$ & $\lnot Q$ & $\lnot P \leftrightarrow Q$ & $P \leftrightarrow \lnot Q$ \\
+        \hline
+        T & T & F & F & F & F \\
+        T & F & F & T & T & T \\
+        F & T & T & F & T & T \\
+        F & F & T & T & F & F \\
+        \hline
+        \end{tabular}
+        \end{center}
+        Hai cột cuối giống hệt nhau, vậy chúng tương đương.
+    
+        \item[c)] $\lnot (P \leftrightarrow Q)$ và $ \lnot P \leftrightarrow Q$ tương đương.
+        Ta biết $P \leftrightarrow Q \equiv (P \land Q) \lor (\lnot P \land \lnot Q)$.
+        Vậy $\lnot (P \leftrightarrow Q) \equiv \lnot((P \land Q) \lor (\lnot P \land \lnot Q))$
+        $\equiv \lnot(P \land Q) \land \lnot(\lnot P \land \lnot Q)$ (De Morgan)
+        $\equiv (\lnot P \lor \lnot Q) \land (P \lor Q)$ (De Morgan, Phủ định kép).
+    
+        Từ câu (b), $\lnot P \leftrightarrow Q \equiv (P \lor Q) \land (\lnot P \lor \lnot Q)$.
+        Vậy hai mệnh đề này tương đương (chúng đều là biểu thức của $P$ XOR $Q$).
+    
+        Cách 2: Bảng chân trị.
+        \begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        $P$ & $Q$ & $P \leftrightarrow Q$ & $\lnot (P \leftrightarrow Q)$ & $\lnot P$ & $\lnot P \leftrightarrow Q$ \\
+        \hline
+        T & T & T & F & F & F \\
+        T & F & F & T & F & T \\
+        F & T & F & T & T & T \\
+        F & F & T & F & T & F \\
+        \hline
+        \end{tabular}
+        \end{center}
+        Hai cột $\lnot (P \leftrightarrow Q)$ và $\lnot P \leftrightarrow Q$ giống hệt nhau, vậy chúng tương đương.
+    
+        \item[d)] $\lnot \exists x \forall y P(x,y)$ và $\forall x \exists y \lnot P(x,y)$ tương đương.
+        Áp dụng luật phủ định của lượng từ:
+        $\lnot \exists x (\forall y P(x,y))$
+        $\equiv \forall x \lnot (\forall y P(x,y))$ (Phủ định của $\exists$ là $\forall \lnot$)
+        $\equiv \forall x (\exists y \lnot P(x,y))$ (Phủ định của $\forall$ là $\exists \lnot$)
+        Vậy chúng tương đương.
+    
+        \item[e)] $(\forall x P(x)) \land A$ và $\forall x (P(x) \land A)$ tương đương, ($A$ là mệnh đề không chứa biến tự do $x$).
+        $(\Rightarrow)$ Giả sử $(\forall x P(x)) \land A$ đúng.
+        Thì $\forall x P(x)$ đúng và $A$ đúng.
+        Vì $\forall x P(x)$ đúng, nên với $c$ bất kỳ trong không gian, $P(c)$ đúng.
+        Vì $A$ đúng (và không phụ thuộc $x$), nên $A$ đúng cho $c$ đó.
+        Vậy $P(c) \land A$ đúng với $c$ bất kỳ.
+        Do đó $\forall x (P(x) \land A)$ đúng.
+    
+        $(\Leftarrow)$ Giả sử $\forall x (P(x) \land A)$ đúng.
+        Thì với $c$ bất kỳ trong không gian, $P(c) \land A$ đúng.
+        Điều này có nghĩa $P(c)$ đúng và $A$ đúng (với $c$ bất kỳ).
+        Từ $P(c)$ đúng với $c$ bất kỳ, suy ra $\forall x P(x)$ đúng.
+        Từ $A$ đúng (vì $A$ không phụ thuộc $x$, nếu nó đúng cho một $c$ thì nó đúng độc lập), suy ra $A$ đúng.
+        Vậy $(\forall x P(x)) \land A$ đúng.
+        Do đó hai mệnh đề tương đương.
+    
+        \item[f)] $(\exists x P(x)) \land A$ và $\exists x (P(x) \land A)$ tương đương, ($A$ là mệnh đề không chứa biến tự do $x$).
+        $(\Rightarrow)$ Giả sử $(\exists x P(x)) \land A$ đúng.
+        Thì $\exists x P(x)$ đúng và $A$ đúng.
+        Vì $\exists x P(x)$ đúng, nên tồn tại một $c$ trong không gian sao cho $P(c)$ đúng.
+        Vì $A$ đúng (và không phụ thuộc $x$), $A$ đúng cho $c$ đó.
+        Vậy $P(c) \land A$ đúng cho $c$ này.
+        Do đó $\exists x (P(x) \land A)$ đúng.
+    
+        $(\Leftarrow)$ Giả sử $\exists x (P(x) \land A)$ đúng.
+        Thì tồn tại một $c$ trong không gian sao cho $P(c) \land A$ đúng.
+        Điều này có nghĩa $P(c)$ đúng và $A$ đúng.
+        Từ $P(c)$ đúng, suy ra $\exists x P(x)$ đúng.
+        Từ $A$ đúng (vì $A$ không phụ thuộc $x$), suy ra $A$ đúng.
+        Vậy $(\exists x P(x)) \land A$ đúng.
+        Do đó hai mệnh đề tương đương.
+    \end{itemize}
+    \end{loigiai}
+    
+    \begin{bt}
+    \begin{itemize}
+    \item[a)] Suy luận dưới đây có đúng không?
+    $$ \begin{matrix}
+         (\lnot X_1 \lor X_2) \rightarrow X_3\\
+         X_3 \rightarrow (X_4 \lor X_5)\\
+         \lnot X_4 \land \lnot X_6\\
+         \lnot X_6 \rightarrow \lnot X_5\\
+       \overline{\qquad \qquad \therefore X_1 \qquad \qquad}
+    \end{matrix}.$$
+    \item[b)] Dùng mô hình suy diễn, kiểm tra xem biểu thức logic sau đúng hay sai?
+    $$((P \rightarrow ((Q \lor R) \land S)) \land P) \rightarrow ((Q \lor R) \land S).$$
+    \end{itemize}
+    \end{bt}
+    
+    \begin{loigiai}
+    \begin{itemize}
+        \item[a)] Suy luận dưới đây có đúng không?
+        Các tiền đề:
+        \begin{enumerate}
+            \item $(\lnot X_1 \lor X_2) \rightarrow X_3$
+            \item $X_3 \rightarrow (X_4 \lor X_5)$
+            \item $\lnot X_4 \land \lnot X_6$
+            \item $\lnot X_6 \rightarrow \lnot X_5$
+        \end{enumerate}
+        Ta cần suy ra $X_1$.
+        \begin{enumerate}
+            \item[5.] $\lnot X_4$ (Từ 3, Đơn giản hóa - Simplification)
+            \item[6.] $\lnot X_6$ (Từ 3, Đơn giản hóa - Simplification)
+            \item[7.] $\lnot X_5$ (Từ 4 và 6, Modus Ponens)
+            \item[8.] $\lnot X_4 \land \lnot X_5$ (Từ 5 và 7, Kết hợp - Conjunction)
+            \item[9.] $\lnot (X_4 \lor X_5)$ (Từ 8, Luật De Morgan)
+            \item[10.] $\lnot X_3$ (Từ 2 và 9, Modus Tollens)
+            \item[11.] $\lnot (\lnot X_1 \lor X_2)$ (Từ 1 và 10, Modus Tollens)
+            \item[12.] $\lnot(\lnot X_1) \land \lnot X_2$ (Từ 11, Luật De Morgan)
+            \item[13.] $X_1 \land \lnot X_2$ (Từ 12, Phủ định kép)
+            \item[14.] $X_1$ (Từ 13, Đơn giản hóa - Simplification)
+        \end{enumerate}
+        Suy luận là \textbf{đúng}.
+    
+        \item[b)] Dùng mô hình suy diễn, kiểm tra xem biểu thức logic sau đúng hay sai?
+        $$((P \rightarrow ((Q \lor R) \land S)) \land P) \rightarrow ((Q \lor R) \land S).$$
+        Đây là một biểu thức có dạng $( (A \rightarrow B) \land A ) \rightarrow B$. Đây chính là quy tắc suy diễn Modus Ponens, và nó là một hằng đúng.
+        Để kiểm tra bằng các bước suy diễn, ta giả sử vế trái đúng và chứng minh vế phải đúng.
+        Giả sử:
+        \begin{enumerate}
+            \item $(P \rightarrow ((Q \lor R) \land S)) \land P$ (Tiền đề của phép kéo theo lớn)
+        \end{enumerate}
+        Từ đó suy ra:
+        \begin{enumerate}
+            \item[2.] $P \rightarrow ((Q \lor R) \land S)$ (Từ 1, Đơn giản hóa)
+            \item[3.] $P$ (Từ 1, Đơn giản hóa)
+            \item[4.] $(Q \lor R) \land S$ (Từ 2 và 3, Modus Ponens)
+        \end{enumerate}
+        Vì vế trái kéo theo vế phải, biểu thức logic là \textbf{đúng} (là một hằng đúng).
+    \end{itemize}
+    \end{loigiai}
+    
+    \begin{bt}
+    Cho $P(x), Q(x), R(x), S(x)$ tướng ứng với các câu ``$x$ là một đứa bé'', ``$x$ tư duy logic'', ``$x$ có khả năng cai quản một con cá sấu'', ``$x$ bị coi thường''. Giả sử rằng không gian là tập hợp tất cả mọi người. Hãy dùng các lượng từ, các liên từ logic cùng với $P(x), Q(x), R(x), S(x)$ để diễn đạt các câu sau:
+    \begin{itemize}
+    \item[a)] Những đứa trẻ không tư duy logic.
+    \item[b)] Không ai bị coi thường nếu cai quản được cá sấu.
+    \item[c)] Những người không tư duy logic hay bị coi thường.
+    \item[d)] Những đứa bé không cai quản được cá sấu.
+    \item[e)] (d) có suy ra được từ (a), (b) và (c) không?
+    \end{itemize}
+    \end{bt}
+    
+    \begin{loigiai}
+    \begin{itemize}
+        \item[a)] Những đứa trẻ không tư duy logic.
+            $$ \forall x (P(x) \rightarrow \lnot Q(x)) $$
+        \item[b)] Không ai bị coi thường nếu cai quản được cá sấu.
+            $$ \forall x (R(x) \rightarrow \lnot S(x)) $$
+            (Tương đương: $\lnot \exists x (R(x) \land S(x))$)
+        \item[c)] Những người không tư duy logic hay bị coi thường.
+            $$ \forall x (\lnot Q(x) \rightarrow S(x)) $$
+        \item[d)] Những đứa bé không cai quản được cá sấu.
+            $$ \forall x (P(x) \rightarrow \lnot R(x)) $$
+        \item[e)] (d) có suy ra được từ (a), (b) và (c) không?
+        Ta có các tiền đề:
+        \begin{enumerate}
+            \item $\forall x (P(x) \rightarrow \lnot Q(x))$ (Từ a)
+            \item $\forall x (R(x) \rightarrow \lnot S(x))$ (Từ b)
+            \item $\forall x (\lnot Q(x) \rightarrow S(x))$ (Từ c)
+        \end{enumerate}
+        Kết luận cần chứng minh: $\forall x (P(x) \rightarrow \lnot R(x))$ (d)
+    
+        Ta sẽ chứng minh bằng cách lấy một cá thể $a$ bất kỳ trong không gian và chứng minh $P(a) \rightarrow \lnot R(a)$.
+        Giả sử $P(a)$ đúng.
+        \begin{itemize}
+            \item $P(a)$ (Giả thiết)
+            \item $P(a) \rightarrow \lnot Q(a)$ (Từ (1) bằng Đặc tả hóa phổ quát - Universal Instantiation)
+            \item $\lnot Q(a)$ (Từ $P(a)$ và $P(a) \rightarrow \lnot Q(a)$, Modus Ponens)
+            \item $\lnot Q(a) \rightarrow S(a)$ (Từ (3) bằng Universal Instantiation)
+            \item $S(a)$ (Từ $\lnot Q(a)$ và $\lnot Q(a) \rightarrow S(a)$, Modus Ponens)
+            \item $R(a) \rightarrow \lnot S(a)$ (Từ (2) bằng Universal Instantiation)
+            \item $\lnot (\lnot S(a)) \rightarrow \lnot R(a)$ (Từ $R(a) \rightarrow \lnot S(a)$, Luật đối phản - Contraposition)
+            \item $S(a) \rightarrow \lnot R(a)$ (Luật phủ định kép)
+            \item $\lnot R(a)$ (Từ $S(a)$ và $S(a) \rightarrow \lnot R(a)$, Modus Ponens)
+        \end{itemize}
+        Vì từ giả thiết $P(a)$ ta suy ra được $\lnot R(a)$, nên $P(a) \rightarrow \lnot R(a)$ đúng.
+        Do $a$ là một cá thể bất kỳ, ta có thể khái quát hóa phổ quát (Universal Generalization) để kết luận:
+        $$ \forall x (P(x) \rightarrow \lnot R(x)) $$
+        Vậy, (d) \textbf{có thể suy ra được} từ (a), (b) và (c).
+    \end{itemize}
+    \end{loigiai}
+
 
 \end{document}
