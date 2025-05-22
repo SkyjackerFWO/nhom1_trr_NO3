@@ -1,0 +1,130 @@
+
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Toán Rời Rạc - Logic}
+\lhead{Đại học Phenikaa}
+\cfoot{\thepage}
+
+\title{Giải Bài Tập Chương 1 \\[0.5em] \large Phần Logic - Toán Rời Rạc}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Bài 1.1 - Chứng minh biểu thức hằng đúng}
+
+\begin{enumerate}[label=\alph*)]
+    \item $((P \rightarrow Q) \land P) \rightarrow Q$ là hằng đúng vì:
+
+    \textbf{Bảng chân trị} cho thấy mệnh đề luôn đúng trong mọi trường hợp giá trị của $P$ và $Q$.
+
+    \textbf{Sử dụng luật logic:} áp dụng luật Modus Ponens.
+
+    \item $P \land Q \rightarrow P$: luôn đúng vì $P \land Q$ bao hàm $P$.
+
+    \item $\neg(P \land Q) \land P \rightarrow \neg Q$: có thể biến đổi về dạng $(\neg P \lor \neg Q) \land P \rightarrow \neg Q$.
+
+    \item $(P \rightarrow Q \land R) \rightarrow ((P \rightarrow Q) \land (P \rightarrow R))$: hằng đúng do phân phối kéo theo.
+
+    \item $((P \land Q) \leftrightarrow P) \rightarrow (P \rightarrow Q)$: luôn đúng theo bảng chân trị.
+\end{enumerate}
+
+\section*{Bài 1.2 - Quy tắc suy diễn}
+
+\begin{enumerate}[label=\alph*)]
+    \item Chứng minh: \\[((X_1 \rightarrow X_2) \land (\neg X_3 \lor X_4) \land (X_1 \lor X_3)) \rightarrow (\neg X_2 \rightarrow X_4)\\] là hằng đúng bằng cách rút gọn từng phần và kiểm tra logic từng bước.
+
+    \item Suy luận từ đoạn văn là hợp lý: nếu $A \rightarrow B$, $B \rightarrow C$, và $\neg C$ thì suy ra $\neg A$ bằng Modus Tollens.
+\end{enumerate}
+
+\section*{Bài 1.3 - Dịch câu sang biểu thức logic}
+
+\begin{enumerate}[label=\alph*)]
+    \item $\forall x(\text{ChimRuoi}(x) \rightarrow \text{SacSo}(x))$
+    \item $\neg \exists x(\text{ChimLon}(x) \land \text{SongBangMatOng}(x))$
+    \item $\forall x((\text{ChimLon}(x) \land \neg \text{SongBangMatOng}(x)) \rightarrow \text{MauXam}(x))$
+    \item $\forall x(\text{ChimRuoi}(x) \rightarrow \text{Nho}(x))$
+\end{enumerate}
+
+\section*{Bài 1.4 - Dùng lượng từ với L(x, y) = x yêu y}
+
+\begin{enumerate}[label=\alph*)]
+    \item $\forall x\, L(x, \text{Mai})$
+    \item $\forall x\, \exists y\, L(x, y)$
+    \item $\exists x\, \forall y\, L(y, x)$
+    \item $\neg \exists x\, \forall y\, L(x, y)$
+    \item $\exists x\, (\forall y\, \neg L(x, y) \lor \forall y\, \neg L(y, x))$
+    \item $\exists x\, \neg L(\text{Nam}, x)$
+    \item $\exists! x\, \forall y\, L(y, x)$
+    \item $\exists x \exists y (x \neq y \land L(\text{Tuấn}, x) \land L(\text{Tuấn}, y) \land \forall z (L(\text{Tuấn}, z) \rightarrow (z = x \lor z = y)))$
+\end{enumerate}
+
+\section*{B'ai 1.5 - Mô hình suy diễn}
+
+Giả sử:
+\begin{itemize}
+\item $\forall x (P(x) \rightarrow (Q(x) \land R(x)))$
+\item $\forall x (P(x) \land F(x))$
+\end{itemize}
+Từ đó suy ra:
+
+\textbf{Suy diễn đúng.}
+
+\section*{B'ai 1.6 - Chứng minh tương đương mệnh đề}
+\begin{enumerate}[label=\alph*)]
+\item $(P \rightarrow Q) \rightarrow R$ và $P \rightarrow (Q \rightarrow R)$: \textbf{không tương đương}
+\item $\neg P \leftrightarrow Q$ và $P \leftrightarrow \neg Q$: \textbf{tương đương}
+\item $\neg(P \leftrightarrow Q)$ và $\neg P \leftrightarrow Q$: \textbf{tương đương}
+\item $\neg\exists x\forall y, P(x, y)$ và $\forall x\exists y, \neg P(x, y)$: \textbf{tương đương}
+\item $(\forall x, P(x)) \land A$ và $\forall x (P(x) \land A)$: \textbf{tương đương nếu A không chứa lượng từ}
+\item $(\exists x, P(x)) \land A$ và $\exists x (P(x) \land A)$: \textbf{tương đương nếu A không chứa lượng từ}
+\end{enumerate}
+
+\section*{B'ai 1.7 - Suy luận và kiểm tra}
+\begin{enumerate}[label=\alph*)]
+\item Giả thiết:
+\begin{itemize}
+\item $(\neg X_1 \lor X_2) \rightarrow X_3$
+\item $X_3 \rightarrow (X_4 \lor X_5)$
+\item $\neg X_4 \land \neg X_6$
+\item $\neg X_6 \rightarrow \neg X_5$
+\end{itemize}
+Suy ra: $X_1$ \textbf{đúng}
+
+\item Mệnh đề: $((P \rightarrow ((Q \lor R) \land S)) \land P) \rightarrow ((Q \lor R) \land S)$\textbf{ là hằng đúng (theo Modus Ponens)}
+\end{enumerate}
+
+\section*{B'ai 1.8 - Diễn đạt logic bằng lượng từ}
+Cho các mệnh đề:
+\begin{itemize}
+\item $P(x)$: x là một đứa bé
+\item $Q(x)$: x tư duy logic
+\item $R(x)$: x có khả năng cai quản cá sấu
+\item $S(x)$: x bị coi thường
+\end{itemize}
+
+\begin{enumerate}[label=\alph*)]
+\item $\forall x (P(x) \rightarrow \neg Q(x))$
+\item $\forall x (R(x) \rightarrow \neg S(x))$
+\item $\forall x (\neg Q(x) \rightarrow S(x))$
+\item $\forall x (P(x) \rightarrow \neg R(x))$
+\item Từ (a), (b), (c), suy ra được (d) thông qua suy diễn:
+
+Từ $P(x) \rightarrow \neg Q(x)$ và $\neg Q(x) \rightarrow S(x)$ suy ra $P(x) \rightarrow S(x)$.
+
+Từ $R(x) \rightarrow \neg S(x)$, ta có $S(x) \rightarrow \neg R(x)$.
+
+Kết hợp: $P(x) \rightarrow \neg R(x)$. Vậy (d) suy ra được từ (a), (b), (c).
+\end{enumerate}
+
+\end{document}
+
