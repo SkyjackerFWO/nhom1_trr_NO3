@@ -1,0 +1,417 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T5]{fontenc}
+\usepackage[vietnam]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{enumitem}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\usepackage{titlesec}
+\titleformat{\section}{\large\bfseries}{\thesection.}{0.5em}{}
+
+\title{Bài 1.4 - Dịch câu sang biểu thức logic}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+Cho $L(x, y)$ là mệnh đề “$x$ yêu $y$” với $x, y$ thuộc tập hợp mọi người trên thế giới. Hãy dùng các lượng từ để diễn đạt các câu sau:
+
+\begin{enumerate}[label=\textbf{(\alph*)}]
+    \item $\forall x \, L(x, \text{Mai})$ \\
+    Mọi người đều yêu Mai.
+
+    \item $\forall x \, \exists y \, L(x, y)$ \\
+    Mọi người đều yêu một ai đó.
+
+    \item $\exists y \, \forall x \, L(x, y)$ \\
+    Có một người mà tất cả mọi người đều yêu.
+
+    \item $\neg \exists x \, \forall y \, L(x, y) \quad \text{hoặc tương đương:} \quad \forall x \, \exists y \, \neg L(x, y)$ \\
+    Không có ai yêu tất cả mọi người.
+
+    \item $\exists x \left[ \left( \forall y \, \neg L(x, y) \right) \lor \left( \forall y \, \neg L(y, x) \right) \right]$ \\
+    Có một người ế (họ không yêu ai hoặc không ai yêu họ).
+
+    \item $\exists x \, \neg L(x, \text{Nam})$ \\
+    Có một người mà Nam không yêu.
+
+    \item $\exists! x \, \forall y \, L(y, x)$ \\
+    Có đúng một người mà tất cả mọi người đều yêu.
+
+    \item $\exists! x \, L(x, \text{Tuấn})$ \\
+    Có đúng một người mà Tuấn yêu.
+\end{enumerate}
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T5]{fontenc}
+\usepackage[vietnam]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\usepackage{enumitem}
+
+\begin{document}
+
+\section*{Bài 1.5}
+
+\textit{Mô hình suy diễn dưới đây trên trường } $\Omega$ \textit{ có đúng không?}
+
+\begin{itemize}
+  \item[a)] $(\forall x)(P(x) \rightarrow (Q(x) \land R(x)))$
+  \item[b)] 
+  \[
+  \frac{(\forall x)(P(x) \land F(x))}{\therefore (\forall x)(R(x) \land F(x))}
+  \]
+\end{itemize}
+
+\subsection*{Lời giải phần (a)}
+
+Mệnh đề $(\forall x)(P(x) \rightarrow (Q(x) \land R(x)))$ mang ý nghĩa:  
+“Với mọi $x$, nếu $x$ thỏa mãn $P(x)$ thì $x$ cũng thỏa mãn cả $Q(x)$ và $R(x)$.”
+
+Câu này là một mệnh đề đã đúng về mặt logic nếu trong miền xác định $\Omega$ ta không tìm được giá trị nào của $x$ sao cho $P(x)$ đúng mà $(Q(x) \land R(x))$ sai.  
+Hay nói cách khác, nếu $P(x)$ sai thì kéo theo mệnh đề kéo theo đúng, hoặc nếu $P(x)$ đúng thì $Q(x)$ và $R(x)$ cũng đều đúng.
+
+→ Đây là một **mệnh đề phổ quát hợp lệ**, không mâu thuẫn logic, nên phần (a) là **đúng**.
+
+\subsection*{Lời giải phần (b)}
+
+Ta có:
+
+\begin{enumerate}[label=\textbf{(G\arabic*)}]
+    \item $(\forall x)(P(x) \rightarrow (Q(x) \land R(x)))$
+    \item $(\forall x)(P(x) \land F(x))$
+\end{enumerate}
+
+\textbf{Mục tiêu:} Suy ra kết luận $(\forall x)(R(x) \land F(x))$
+
+\vspace{1em}
+\textbf{Từ (G2):} Vì $(\forall x)(P(x) \land F(x))$  
+\[
+\Rightarrow \text{Với mọi } x, \quad P(x) \text{ đúng và } F(x) \text{ đúng.}
+\]
+
+\textbf{Từ (G1):} Do $P(x)$ đúng nên áp dụng mệnh đề kéo theo:  
+\[
+P(x) \rightarrow (Q(x) \land R(x)) \Rightarrow Q(x) \land R(x) \text{ đúng.}
+\]
+
+\textbf{Do đó:}
+\[
+\text{Với mọi } x: \quad R(x) \text{ đúng (từ G1)}, \quad F(x) \text{ đúng (từ G2)}
+\Rightarrow R(x) \land F(x) \text{ đúng}
+\]
+
+\[
+\Rightarrow (\forall x)(R(x) \land F(x))
+\]
+
+\subsection*{Kết luận}
+
+Cả hai phần đều là những mô hình suy diễn \textbf{hợp lệ}, đúng trên trường $\Omega$.
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T5]{fontenc}
+\usepackage[vietnam]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\usepackage{enumitem}
+
+\begin{document}
+
+\section*{Bài 1.6}
+
+\textit{Chứng minh các cặp mệnh đề sau tương đương hay không.}
+
+\begin{enumerate}[label=\textbf{(\alph*)}]
+
+% ----- a -----
+\item $(P \rightarrow Q) \rightarrow R$ và $P \rightarrow (Q \rightarrow R)$ không tương đương.
+
+\textbf{Phân tích:}  
+Ta xét bảng chân trị:
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$P$ & $Q$ & $R$ & $(P \rightarrow Q) \rightarrow R$ & $Q \rightarrow R$ & $P \rightarrow (Q \rightarrow R)$ \\
+\hline
+T & T & T & T & T & T \\
+T & T & F & F & F & F \\
+T & F & T & T & T & T \\
+T & F & F & T & T & F \\
+F & T & T & T & T & T \\
+F & T & F & F & F & T \\
+F & F & T & T & T & T \\
+F & F & F & T & T & T \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{Nhận xét:} Có dòng (P = T, Q = F, R = F) mà hai mệnh đề khác nhau.  
+→ Hai mệnh đề \textbf{không tương đương}.
+
+\vspace{1em}
+
+% ----- b -----
+\item $\neg P \leftrightarrow Q$ và $P \leftrightarrow \neg Q$ tương đương.
+
+\textbf{Phân tích:}  
+Xét bảng chân trị:
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+$P$ & $Q$ & $\neg P$ & $\neg Q$ & $\neg P \leftrightarrow Q = P \leftrightarrow \neg Q$ \\
+\hline
+T & T & F & F & F \\
+T & F & F & T & T \\
+F & T & T & F & T \\
+F & F & T & T & F \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{Nhận xét:} Giá trị của hai mệnh đề luôn giống nhau.  
+→ Hai mệnh đề \textbf{tương đương}.
+
+\vspace{1em}
+
+% ----- c -----
+\item $\neg (P \leftrightarrow Q)$ và $\neg P \leftrightarrow Q$ tương đương.
+
+\textbf{Phân tích:}
+
+Sử dụng bảng chân trị:
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$P$ & $Q$ & $P \leftrightarrow Q$ & $\neg (P \leftrightarrow Q)$ & $\neg P$ & $\neg P \leftrightarrow Q$ \\
+\hline
+T & T & T & F & F & F \\
+T & F & F & T & F & T \\
+F & T & F & T & T & T \\
+F & F & T & F & T & F \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{Nhận xét:} Hai mệnh đề luôn cùng giá trị.  
+→ \textbf{Tương đương}.
+
+\vspace{1em}
+
+% ----- d -----
+\item $\exists x \forall y P(x, y)$ và $\forall x \exists y \neg P(x, y)$ tương đương.
+
+\textbf{Phân tích:}
+
+Hai mệnh đề này không tương đương.
+
+- $\exists x \forall y P(x, y)$: tồn tại một $x$ sao cho với mọi $y$, $P(x,y)$ đúng.  
+- $\forall x \exists y \neg P(x, y)$: với mọi $x$, tồn tại một $y$ sao cho $P(x,y)$ sai.
+
+→ Đây là hai mệnh đề phủ định nhau về cấu trúc lượng từ.  
+→ \textbf{Không tương đương.}
+
+\vspace{1em}
+
+% ----- e -----
+\item $(\forall x P(x)) \land A$ và $\forall x (P(x) \land A)$ tương đương, với $A$ không phụ thuộc lượng từ nào.
+
+\textbf{Phân tích:}
+
+- Với mọi $x$, $P(x)$ đúng và $A$ đúng (toàn cục) → có thể phân phối $A$ vào trong lượng từ.
+
+\[
+(\forall x P(x)) \land A \equiv \forall x (P(x) \land A)
+\]
+
+→ \textbf{Tương đương.}
+
+\vspace{1em}
+
+% ----- f -----
+\item $(\exists x P(x)) \land A$ và $\exists x (P(x) \land A)$ tương đương, với $A$ không phụ thuộc lượng từ nào.
+
+\textbf{Phân tích:}
+
+- $A$ không phụ thuộc vào $x$ nên có thể kéo vào hoặc kéo ra khỏi mệnh đề có lượng từ.
+
+\[
+(\exists x P(x)) \land A \equiv \exists x (P(x) \land A)
+\]
+
+→ \textbf{Tương đương.}
+
+\end{enumerate}
+
+
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T5]{fontenc}
+\usepackage[vietnam]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\usepackage{enumitem}
+
+\begin{document}
+
+\section*{Bài 1.7}
+
+\subsection*{(a) Suy luận dưới đây có đúng không?}
+
+\begin{align*}
+&(\neg X_1 \lor X_2) \rightarrow X_3 \\
+&X_3 \rightarrow (X_4 \lor X_5) \\
+&\neg X_4 \land \neg X_6 \\
+&\neg X_6 \rightarrow \neg X_5 \\
+&\therefore X_1
+\end{align*}
+
+\textbf{Lời giải:}
+
+Ta sẽ phân tích từng bước suy luận từ các giả thiết:
+
+\begin{itemize}
+    \item Từ $\neg X_4 \land \neg X_6$ suy ra:
+    \[
+    \neg X_4 \text{ và } \neg X_6 \text{ đều đúng}
+    \]
+    \item Áp dụng vào $\neg X_6 \rightarrow \neg X_5$, vì $\neg X_6$ đúng nên suy ra $\neg X_5$ đúng
+    \item Vậy $\neg X_4$ và $\neg X_5$ đều đúng → suy ra:
+    \[
+    \neg (X_4 \lor X_5)
+    \Rightarrow (X_4 \lor X_5) \text{ sai}
+    \]
+    \item Do $X_3 \rightarrow (X_4 \lor X_5)$ và vế phải sai, suy ra $X_3$ phải sai
+    \item Lúc này $X_3$ sai, áp dụng lại mệnh đề $(\neg X_1 \lor X_2) \rightarrow X_3$: vế phải sai → suy ra vế trái phải sai
+    \[
+    \Rightarrow \neg(\neg X_1 \lor X_2) = X_1 \land \neg X_2
+    \Rightarrow X_1 \text{ đúng}
+    \]
+\end{itemize}
+
+\textbf{Kết luận:} Suy luận là \textbf{đúng}.
+
+\vspace{1em}
+
+\subsection*{(b) Dùng mô hình suy diễn, kiểm tra biểu thức sau đúng hay sai:}
+
+\[
+((P \rightarrow ((Q \lor R) \land S)) \land P) \rightarrow ((Q \lor R) \land S)
+\]
+
+\textbf{Lời giải:}
+
+Ta đặt:
+\[
+\phi = ((P \rightarrow ((Q \lor R) \land S)) \land P) \rightarrow ((Q \lor R) \land S)
+\]
+
+Xét bảng chân trị:
+
+\begin{itemize}
+    \item Nếu $P$ đúng, và $P \rightarrow ((Q \lor R) \land S)$ cũng đúng, thì $(Q \lor R) \land S$ phải đúng
+    \item Giả sử: 
+    \[
+    P = \text{T}, \quad Q = \text{F}, \quad R = \text{F}, \quad S = \text{T}
+    \Rightarrow (Q \lor R) \land S = \text{F} \land \text{T} = \text{F}
+    \]
+    \item Ta xét $P \rightarrow ((Q \lor R) \land S) = T \rightarrow F = F$
+    \item Vậy $\phi = (F \land T) \rightarrow F = F \rightarrow F = T$
+    \item Nhưng nếu ta chọn:
+    \[
+    P = \text{T}, Q = \text{F}, R = \text{F}, S = \text{F}
+    \Rightarrow (Q \lor R) \land S = F \land F = F
+    \Rightarrow P \rightarrow F = F \Rightarrow \phi = (F \land T) \rightarrow F = F \rightarrow F = T
+    \]
+    \item Tuy nhiên, nếu:
+    \[
+    P = \text{T}, Q = \text{F}, R = \text{F}, S = \text{T}
+    \Rightarrow (Q \lor R) \land S = F \land T = F, \quad P \rightarrow ((Q \lor R) \land S) = T \rightarrow F = F
+    \Rightarrow \phi = (F \land T) \rightarrow F = F \rightarrow F = T
+    \]
+\end{itemize}
+
+Sau khi kiểm tra mọi trường hợp, ta thấy: mệnh đề luôn đúng nếu $P$ đúng kéo theo vế phải đúng.
+
+\textbf{Kết luận:} Biểu thức là một \textbf{hàm hằng đúng}.
+
+
+\section*{Bài 1.8}
+
+\textit{Cho các mệnh đề:}  
+\begin{itemize}
+    \item $P(x)$: $x$ là một đứa bé
+    \item $Q(x)$: $x$ tư duy logic
+    \item $R(x)$: $x$ có khả năng cai quản một con cá sấu
+    \item $S(x)$: $x$ bị coi thường
+\end{itemize}
+
+\textbf{Không gian:} Tập hợp tất cả mọi người.
+
+\vspace{1em}
+\textbf{a)} Những đứa trẻ không tư duy logic.
+
+\[
+\forall x \, (P(x) \rightarrow \neg Q(x))
+\]
+
+\vspace{0.5em}
+\textbf{b)} Không ai bị coi thường nếu cai quản được cá sấu.
+
+\[
+\forall x \, (R(x) \rightarrow \neg S(x))
+\]
+
+\vspace{0.5em}
+\textbf{c)} Những người không tư duy logic hay bị coi thường.
+
+\[
+\forall x \, (\neg Q(x) \rightarrow S(x))
+\]
+
+\vspace{0.5em}
+\textbf{d)} Những đứa bé không cai quản được cá sấu.
+
+\[
+\forall x \, (P(x) \rightarrow \neg R(x))
+\]
+
+\vspace{0.5em}
+\textbf{e)} (d) có suy ra được từ (a), (b) và (c) không?
+
+\textbf{Phân tích suy diễn:}
+
+Giả sử:
+\begin{align*}
+&\text{(1) } \forall x \, (P(x) \rightarrow \neg Q(x)) \\
+&\text{(2) } \forall x \, (R(x) \rightarrow \neg S(x)) \equiv \forall x \, (S(x) \rightarrow \neg R(x)) \\
+&\text{(3) } \forall x \, (\neg Q(x) \rightarrow S(x))
+\end{align*}
+
+Từ (1) và (3):  
+- $P(x) \rightarrow \neg Q(x)$ và $\neg Q(x) \rightarrow S(x)$  
+→ Suy ra $P(x) \rightarrow S(x)$ (bằng phép bắc cầu)
+
+Kết hợp với (2) dạng $S(x) \rightarrow \neg R(x)$  
+→ Suy ra $P(x) \rightarrow \neg R(x)$
+
+Vậy:
+\[
+\boxed{\forall x \, (P(x) \rightarrow \neg R(x))}
+\]
+
+→ \textbf{(d) suy ra được từ (a), (b) và (c)}.
+
+\textbf{Kết luận:} Câu (e): \textbf{Có}, mệnh đề (d) được suy ra từ (a), (b) và (c).
+
+\end{document}
+
+
