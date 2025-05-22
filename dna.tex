@@ -1,0 +1,130 @@
+
+\documentclass[12pt]{article}
+\usepackage[utf8]{vietnam}
+\usepackage{amsmath,amssymb}
+\usepackage{amsthm}
+
+\title{Giải Bài Tập Toán Rời Rạc - Phần Logic (1.1 - 1.7)}
+\author{Đại học Phenikaa - Khoa CNTT}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Bài 1.1: Chứng minh hằng đúng bằng bảng chân trị và luật logic}
+
+\begin{enumerate}
+    \item $((P \rightarrow Q) \land P) \rightarrow Q$\\
+    Đây là định luật Modus Ponens. Có thể chứng minh bằng bảng chân trị với 4 tổ hợp giá trị của $P$ và $Q$. Với mọi trường hợp, mệnh đề luôn đúng.
+    
+    \item $P \land Q \rightarrow P$\\
+    Theo luật loại bỏ hội (\textit{conjunction elimination}): từ $P \land Q$ suy ra $P$.
+
+    \item $\neg(P \land Q) \land P \rightarrow \neg Q$\\
+    Giả sử $\neg(P \land Q)$ đúng và $P$ đúng, thì $Q$ phải sai, vì nếu $Q$ đúng thì $P \land Q$ sẽ đúng, mâu thuẫn.
+
+    \item $(P \rightarrow Q \land R) \rightarrow ((P \rightarrow Q) \land (P \rightarrow R))$\\
+    Dùng luật phân tích mệnh đề kéo theo: nếu $P$ kéo theo $Q \land R$ thì $P$ kéo theo $Q$ và $P$ kéo theo $R$.
+
+    \item $((P \land Q) \leftrightarrow P) \rightarrow (P \rightarrow Q)$\\
+    Nếu $P \land Q \leftrightarrow P$, thì $P$ đúng đồng nghĩa với $Q$ đúng, nên suy ra $P \rightarrow Q$.
+\end{enumerate}
+
+\section*{Bài 1.2: Suy diễn mệnh đề logic}
+
+\begin{enumerate}
+    \item Mệnh đề:
+    \[ ((X_1 \rightarrow X_2) \land (\neg X_3 \lor X_4) \land (X_1 \lor X_3)) \rightarrow (\neg X_2 \rightarrow X_4) \]
+    Giả sử: $X_1 \rightarrow X_2$, $\neg X_3 \lor X_4$, và $X_1 \lor X_3$.\\
+    Nếu $\neg X_2$ đúng, ta cần $X_4$ đúng để kết luận đúng.\\
+    Ta xét các trường hợp: nếu $X_1$ đúng → $X_2$ đúng (từ giả thiết), mâu thuẫn với $\neg X_2$ → $X_1$ sai → từ $X_1 \lor X_3$, suy ra $X_3$ đúng → từ $\neg X_3 \lor X_4$ suy ra $X_4$ đúng.\\
+    Suy ra mệnh đề là hằng đúng.
+
+    \item Dịch suy luận thành mệnh đề logic:
+    \[ A \rightarrow B, \quad B \rightarrow C, \quad \neg C \Rightarrow \neg A \]
+    Dùng luật Modus Tollens hai lần:
+    \[ \neg C \Rightarrow \neg B \Rightarrow \neg A \]
+    Suy luận đúng.
+\end{enumerate}
+
+\section*{Bài 1.3: Dịch sang logic mệnh đề}
+
+\begin{itemize}
+    \item Gọi các mệnh đề: $C(x)$: "x là chim ruồi", $M(x)$: "x có màu sắc sặc sỡ", $L(x)$: "x là chim lớn", $H(x)$: "x sống bằng mật ong", $X(x)$: "x có màu xám", $N(x)$: "x là chim nhỏ".
+
+    \item a) $\forall x (C(x) \rightarrow M(x))$
+
+    \item b) $\neg \exists x (L(x) \land H(x))$
+
+    \item c) $\forall x ((L(x) \land \neg H(x)) \rightarrow X(x))$
+
+    \item d) $\forall x (C(x) \rightarrow N(x))$
+\end{itemize}
+
+\section*{Bài 1.4: Lượng từ với $L(x,y)$ là “x yêu y”}
+
+\begin{itemize}
+    \item a) $\forall x \, L(x,\text{Mai})$
+    \item b) $\forall x \exists y \, L(x,y)$
+    \item c) $\exists y \forall x \, L(x,y)$
+    \item d) $\neg \exists x \forall y \, L(x,y)$
+    \item e) $\exists x \left[ \forall y \neg L(x,y) \lor \forall y \neg L(y,x) \right]$
+    \item f) $\exists x \, \neg L(\text{Nam}, x)$
+    \item g) $\exists! x \forall y \, L(y,x)$
+    \item h) $\exists x \exists y (x \ne y \land L(\text{Tuấn}, x) \land L(\text{Tuấn}, y) \land \forall z (L(\text{Tuấn}, z) \rightarrow (z = x \lor z = y)))$
+\end{itemize}
+
+\section*{Bài 1.5: Kiểm tra suy luận với lượng từ}
+
+\begin{align*}
+(1)\quad & \forall x (P(x) \rightarrow (Q(x) \land R(x))) \\
+(2)\quad & \forall x (P(x) \land F(x)) \\
+\text{Từ (1) và (2):} & \forall x \left[ (Q(x) \land R(x)) \land F(x) \right] \Rightarrow \forall x (R(x) \land F(x)) \quad \text{(suy luận đúng)}
+\end{align*}
+
+\section*{Bài 1.6: So sánh mệnh đề tương đương}
+
+\begin{enumerate}
+    \item $(P \rightarrow Q) \rightarrow R$ và $P \rightarrow (Q \rightarrow R)$ không tương đương. (dễ thấy qua bảng chân trị)
+
+    \item $\neg P \leftrightarrow Q$ và $P \leftrightarrow \neg Q$ là tương đương.
+
+    \item $\neg(P \leftrightarrow Q)$ và $\neg P \leftrightarrow Q$ là tương đương. (cùng đúng khi $P \ne Q$)
+
+    \item $\neg \exists x \forall y P(x,y)$ tương đương với $\forall x \exists y \neg P(x,y)$ (luật De Morgan)
+
+    \item $(\forall x P(x)) \land A$ tương đương với $\forall x (P(x) \land A)$ nếu $A$ không chứa lượng từ
+
+    \item $(\exists x P(x)) \land A$ tương đương với $\exists x (P(x) \land A)$ nếu $A$ không chứa lượng từ
+\end{enumerate}
+
+\section*{Bài 1.7: Kiểm tra suy luận}
+
+\subsection*{a) Chứng minh $X_1$}
+
+\begin{align*}
+(1)\quad & (\neg X_1 \lor X_2) \rightarrow X_3 \\
+(2)\quad & X_3 \rightarrow (X_4 \lor X_5) \\
+(3)\quad & \neg X_4 \land \neg X_6 \\
+(4)\quad & \neg X_6 \rightarrow \neg X_5
+\end{align*}
+
+Từ (3): $\neg X_4$, $\neg X_6$\\
+Từ (4): $\neg X_6 \rightarrow \neg X_5 \Rightarrow \neg X_5$\\
+Suy ra: $\neg (X_4 \lor X_5)$\\
+$\Rightarrow \neg (X_3 \rightarrow (X_4 \lor X_5)) \Rightarrow \neg X_3$\\
+Từ (1): $(\neg X_1 \lor X_2) \rightarrow X_3 \Rightarrow \neg X_3 \Rightarrow \neg(\neg X_1 \lor X_2) \Rightarrow X_1 \land \neg X_2 \Rightarrow X_1$\\
+\textbf{Kết luận:} Suy luận đúng.
+
+\subsection*{b) Kiểm tra biểu thức}
+
+\[
+((P \rightarrow ((Q \lor R) \land S)) \land P) \rightarrow ((Q \lor R) \land S)
+\]
+
+Gọi $A = (P \rightarrow ((Q \lor R) \land S))$\\
+Với $(A \land P)$ đúng thì $P$ đúng và $P \rightarrow ((Q \lor R) \land S)$ đúng, suy ra $(Q \lor R) \land S$ đúng.\\
+\textbf{Vậy mệnh đề là hằng đúng.}
+
+\end{document}
