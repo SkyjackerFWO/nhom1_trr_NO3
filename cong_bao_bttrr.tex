@@ -1,0 +1,278 @@
+
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\usepackage{enumitem}
+\geometry{a4paper, margin=2.5cm}
+\title{Lời giải Bài Tập Chương 1 - Logic cơ bản}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\noindent\textbf{Bài 1.1:} \textit{Chứng minh các biểu thức sau là hằng đúng bằng hai cách (lập bảng chân trị và dùng luật logic).}
+
+
+\textbf{a) } $((P \rightarrow Q) \land P) \rightarrow Q$
+
+\textbf{– Bảng chân trị:}
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+P & Q & $P \rightarrow Q$ & $(P \rightarrow Q) \land P$ & Biểu thức \\
+\hline
+T & T & T & T & T \\
+T & F & F & F & T \\
+F & T & T & F & T \\
+F & F & T & F & T \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{– Dùng luật logic:}
+
+\[
+((P \rightarrow Q) \land P) \rightarrow Q \equiv \text{áp dụng Modus Ponens} \Rightarrow Q
+\]
+
+---
+
+\textbf{b) } $P \land Q \rightarrow P$
+
+\textbf{– Bảng chân trị:}
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+P & Q & $P \land Q$ & Biểu thức \\
+\hline
+T & T & T & T \\
+T & F & F & T \\
+F & T & F & T \\
+F & F & F & T \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{– Dùng luật logic:} Từ $P \land Q$ \rightarrow P$ theo luật loại bỏ hội.
+
+---
+
+\textbf{c) } $\neg(P \land Q) \land P \rightarrow \neg Q$
+
+\textbf{– Bảng chân trị:}
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+P & Q & $P \land Q$ & $\neg(P \land Q)$ & $\neg(P \land Q) \land P$ & Biểu thức \\
+\hline
+T & T & T & F & F & T \\
+T & F & F & T & T & T \\
+F & T & F & T & F & T \\
+F & F & F & T & F & T \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{– Dùng luật logic:} Nếu $P$ đúng và $P \land Q$ sai thì $Q$ phải sai $\Rightarrow \neg Q$ đúng.
+
+---
+
+\textbf{d) } $(P \rightarrow (Q \land R)) \rightarrow ((P \rightarrow Q) \land (P \rightarrow R))$
+
+\textbf{– Bảng chân trị:}
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+\hline
+P & Q & R & $Q \land R$ & $P \rightarrow (Q \land R)$ & $P \rightarrow Q$ & $P \rightarrow R$ & RHS & Biểu thức \\
+\hline
+T & T & T & T & T & T & T & T & T \\
+T & T & F & F & F & T & F & F & T \\
+T & F & T & F & F & F & T & F & T \\
+T & F & F & F & F & F & F & F & T \\
+F & T & T & T & T & T & T & T & T \\
+F & T & F & F & T & T & T & T & T \\
+F & F & T & F & T & T & T & T & T \\
+F & F & F & F & T & T & T & T & T \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{– Dùng luật logic:} Nếu $P$ đúng thì $Q \land R$ đúng $\Rightarrow Q$ và $R$ đều đúng.\\
+Nếu $P$ sai thì $P \rightarrow X$ luôn đúng.\\
+\textbf{→ Biểu thức luôn đúng ⇒ hằng đúng.}
+
+---
+
+\textbf{đ) } $((P \land Q) \leftrightarrow P) \rightarrow (P \rightarrow Q)$
+
+
+\vspace{1em}
+\noindent\textbf{Bài 1.2:} \textit{Sử dụng quy tắc suy diễn trong mệnh đề logic.}
+
+\begin{enumerate}[label=\alph*)]
+\item $((X_1 \rightarrow X_2) \land (\neg X_3 \lor X_4) \land (X_1 \lor X_3)) \rightarrow (\neg X_2 \rightarrow X_4)$\\
+Giả sử $\neg X_2$ đúng. Từ $X_1 \rightarrow X_2$ suy ra $X_1$ phải sai. Khi đó, $X_3$ phải đúng. Với $\neg X_3 \lor X_4$ và $X_3$ đúng $\Rightarrow X_4$ đúng.\\
+$\Rightarrow$ mệnh đề đúng.
+
+\item Lập luận: Nếu được thưởng thì An đi Đà Lạt. Nếu đi Đà Lạt thì An thăm Thiền Viện. An không thăm Thiền Viện $\Rightarrow$ không đi Đà Lạt $\Rightarrow$ không được thưởng.\\
+\textbf{Suy luận đúng (Modus Tollens)}.
+\end{enumerate}
+
+\vspace{1em}
+\noindent\textbf{Bài 1.3:} \textit{Dịch các câu thành biểu thức logic.}
+
+Gọi:
+\begin{itemize}
+  \item $R(x)$: x là chim ruồi
+  \item $S(x)$: x có màu sặc sỡ
+  \item $L(x)$: x là chim lớn
+  \item $H(x)$: x sống bằng mật ong
+  \item $G(x)$: x có màu xám
+  \item $N(x)$: x là chim nhỏ
+\end{itemize}
+
+\begin{enumerate}[label=\alph*)]
+\item $\forall x (R(x) \rightarrow S(x))$
+\item $\forall x (L(x) \rightarrow \neg H(x))$
+\item $\forall x (\neg(L(x) \land H(x)) \rightarrow G(x))$
+\item $\forall x (R(x) \rightarrow N(x))$
+\end{enumerate}
+
+\vspace{1em}
+\noindent\textbf{Bài 1.4:} \textit{Dịch các câu thành biểu thức logic có lượng từ.}
+
+Gọi $L(x, y)$: x yêu y.
+
+\begin{enumerate}[label=\alph*)]
+\item $\forall x\, L(x, Mai)$
+\item $\forall x\, \exists y\, L(x, y)$
+\item $\exists x\, \forall y\, L(y, x)$
+\item $\neg \exists x\, \forall y\, L(x, y)$
+\item $\exists x\, [\forall y\, \neg L(x, y) \lor \forall y\, \neg L(y, x)]$
+\item $\exists x\, \neg L(Nam, x)$
+\item $\exists x\, [\forall y\, L(y, x) \land \forall z\, (\forall y\, L(y, z) \rightarrow z = x)]$
+\item $\exists x\, \exists y\, [x \ne y \land L(Tuấn, x) \land L(Tuấn, y) \land \forall z\, (L(Tuấn, z) \rightarrow (z = x \lor z = y))]$
+\end{enumerate}
+
+\vspace{1em}
+\noindent\textbf{Bài 1.5:} \textit{Kiểm tra mô hình suy diễn.}
+Cho hai mệnh đề:
+\[
+\text{(1) } \forall x (P(x) \rightarrow (Q(x) \land R(x))), \quad
+\text{(2) } \forall x (P(x) \land F(x))
+\]
+
+Từ (2) suy ra \(P(x)\) đúng với mọi \(x\), kết hợp với (1) ta được:
+\[
+P(x) \rightarrow (Q(x) \land R(x)) \Rightarrow Q(x) \land R(x) \Rightarrow R(x)
+\]
+Mà (2) cũng cho \(F(x)\) đúng với mọi \(x\), nên \(R(x) \land F(x)\) đúng với mọi \(x\).
+
+Do đó, ta suy ra:
+\[
+\boxed{\forall x (R(x) \land F(x))}
+\]
+
+Suy luận là \textbf{đúng}.
+
+
+\vspace{1em}
+\noindent\textbf{Bài 1.6:} \textit{Chứng minh các cặp mệnh đề sau tương đương hoặc không.}
+
+
+\begin{enumerate}[label=\alph*)]
+
+\item $(P \rightarrow Q) \rightarrow R$ và $P \rightarrow (Q \rightarrow R)$\\
+\textbf{Không tương đương.}\\
+Xét phản ví dụ: $P = \text{T}, Q = \text{F}, R = \text{T}$. Khi đó:
+\[
+(P \rightarrow Q) = \text{F}, \quad (P \rightarrow Q) \rightarrow R = \text{T}
+\]
+\[
+(Q \rightarrow R) = \text{F} \rightarrow \text{T} = \text{T}, \quad P \rightarrow (Q \rightarrow R) = \text{T}
+\]
+Tuy cho kết quả giống nhau, nhưng với $P = T, Q = T, R = F$ thì:
+\[
+(P \rightarrow Q) = T, \quad (P \rightarrow Q) \rightarrow R = F
+\]
+\[
+Q \rightarrow R = T \rightarrow F = F, \quad P \rightarrow (Q \rightarrow R) = T \rightarrow F = F
+\]
+Có những trường hợp kết quả khác nhau.\\
+$\Rightarrow$ Hai mệnh đề \textbf{không tương đương}.
+
+\item $\neg P \leftrightarrow Q$ và $P \leftrightarrow \neg Q$\\
+\textbf{Tương đương.}\\
+Vì phủ định hai vế và đổi vị trí vẫn giữ ý nghĩa tương đương logic.\\
+Có thể xác nhận bằng bảng chân trị, hai mệnh đề luôn cho cùng giá trị.
+
+\item $\neg (P \leftrightarrow Q)$ và $\neg P \leftrightarrow Q$\\
+\textbf{Không tương đương.}\\
+Xét bảng chân trị:
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+P & Q & $P \leftrightarrow Q$ & $\neg (P \leftrightarrow Q)$ & $\neg P$ & $\neg P \leftrightarrow Q$ \\
+\hline
+T & T & T & F & F & F \\
+T & F & F & T & F & T \\
+F & T & F & T & T & T \\
+F & F & T & F & T & F \\
+\hline
+\end{tabular}
+\end{center}
+Hai mệnh đề cho giá trị khác nhau trong một số trường hợp ⇒ không tương đương.
+
+\item $\neg \exists x \forall y\, P(x, y)$ và $\forall x \exists y\, \neg P(x, y)$\\
+\textbf{Tương đương.}\\
+Theo quy tắc phủ định lượng từ:
+\[
+\neg \exists x \forall y\, P(x, y) \equiv \forall x \exists y\, \neg P(x, y)
+\]
+
+\item $(\forall x\, P(x)) \land A$ và $\forall x (P(x) \land A)$\\
+\textbf{Tương đương nếu $A$ không chứa biến $x$.}\\
+Vì trong trường hợp đó, $A$ là một mệnh đề độc lập có thể phân phối vào hoặc ra ngoài lượng từ mà không ảnh hưởng logic.
+
+\item $(\exists x\, P(x)) \land A$ và $\exists x (P(x) \land A)$\\
+\textbf{Tương đương nếu $A$ không chứa biến $x$.}\\
+Giải thích tương tự câu (e): nếu $A$ không phụ thuộc vào $x$, việc đặt nó bên trong hoặc ngoài lượng từ $\exists$ không làm thay đổi ý nghĩa mệnh đề.
+
+
+\vspace{1em}
+\noindent\textbf{Bài 1.7:} \textit{Kiểm tra suy luận.}
+
+\begin{enumerate}[label=\alph*)]
+\item Từ chuỗi điều kiện, suy ra $X_5 = F \Rightarrow X_4 \lor X_5 = F \Rightarrow X_3 = F \Rightarrow (\neg X_1 \lor X_2) = F \Rightarrow X_1 = T, X_2 = F$\\
+$\Rightarrow$ suy luận đúng.
+
+\item Biểu thức $((P \rightarrow ((Q \lor R) \land S)) \land P) \rightarrow ((Q \lor R) \land S)$ là hằng đúng do áp dụng Modus Ponens.
+\end{enumerate}
+
+\vspace{1em}
+\noindent\textbf{Bài 1.8:} \textit{Dịch sang biểu thức mệnh đề.}
+
+\begin{itemize}
+  \item $P(x)$: x là đứa bé
+  \item $Q(x)$: x tư duy logic
+  \item $R(x)$: x cai quản cá sấu
+  \item $S(x)$: x bị coi thường
+\end{itemize}
+
+\begin{enumerate}[label=\alph*)]
+\item $\forall x (P(x) \rightarrow \neg Q(x))$
+\item $\forall x (R(x) \rightarrow \neg S(x))$
+\item $\forall x (\neg Q(x) \rightarrow S(x))$
+\item $\forall x (P(x) \rightarrow \neg R(x))$
+\item Không suy ra được (d) từ (a), (b), (c) vì không có liên hệ trực tiếp giữa $P(x)$ và $R(x)$.
+\end{enumerate}
+
+\end{document}
