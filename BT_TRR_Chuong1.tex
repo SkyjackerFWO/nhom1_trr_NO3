@@ -1,0 +1,658 @@
+%%9:3:51 27/9/2014 -VieTeX creates D:\Loan\tex\New folder\TCC1\bo de YL\th.tex
+ \NeedsTeXFormat{LaTeX2e}
+\documentclass[11pt, oneside,openright,a4paper]{book}
+\usepackage[pctex32]{graphics}
+%\usepackage{vnfonts}
+%\usepackage[vietnam,english]{babel}
+%\usepackage[tcvn]{vietnam}
+\usepackage{amsmath}
+\usepackage[mathscr]{eucal}
+\usepackage{amsfonts}
+\usepackage{amsmath,amsxtra,latexsym,amsthm, amssymb, amscd}
+\usepackage[utf8]{vietnam}
+\usepackage{fancyhdr}
+%\input setbmp
+%\usecolortheme{beaver}
+%\usetheme{Madrid}
+%-------------------Canh lề trang-----------
+\voffset=-0.5in
+\hoffset=0.2in
+\parskip 5pt
+\setlength{\evensidemargin}{0.2in}
+\setlength{\oddsidemargin}{0.2in}
+\setlength{\marginparsep}{0.01in}
+\setlength{\topmargin}{0.01in}
+\setlength{\headsep}{0.3in}
+\setlength{\footskip}{0.6in}
+\setlength{\marginparwidth}{0.01in}
+\setlength{\headheight}{0.2in}
+\setlength{\textheight}{9.3in}%{9.5in}
+\setlength{\textwidth}{6.2in}
+\setlength{\hfuzz}{2pt}
+
+%------------------------------------------------------
+
+\usepackage{graphicx}
+\usepackage{color}
+\newtheorem{dl}{Định lý}[chapter]
+\newtheorem{dn}{Định nghĩa}[chapter]
+\newtheorem{bt}{Bài }[section]
+\newtheorem{md}{Mệnh đề}[chapter]
+\newtheorem{bd}{Bổ đề}[chapter]
+\newtheorem{hq}{Hệ quả}[chapter]
+\newtheorem{nx}{Nhận xét}[chapter]
+\newtheorem{cy}{Chú ý}[chapter]
+\newtheorem{vd}{Ví dụ}[chapter]
+
+
+%\pagestyle{fancy}
+\def\B{\mathscr B}
+\def\one{\mathbf 1}
+\def\RR{{\mathbb R}}
+\def\LL{{\mathbb L}}
+\def\m{{\mathbb M}}
+\def\p{{\mathbb P}}
+\DeclareMathOperator{\const}{const}
+
+%----------them cua em Giang------------------------------
+\renewcommand{\chaptername}{Chapter}
+\renewcommand{\contentsname}{\centerline{Mc}}
+\renewcommand{\bibname}{\centerline{References}}
+\renewcommand\appendixname{Phc} 
+\renewcommand{\proofname}{Prove}
+\renewcommand{\baselinestretch}{1.5} 
+%---------------------------------------------------------
+%---------------------------Heading and foot--------------
+\makeatletter	   
+\renewcommand{\ps@plain}{
+    \renewcommand{\@oddfoot}{\makebox[\textwidth]{$-\;\thepage\;-$}} 
+   \renewcommand{\@oddhead}{\empty} 
+    \renewcommand{\@evenhead}{\@oddhead}    
+ \renewcommand{\@evenfoot}{\@oddfoot}     }
+
+\makeatother    
+\pagestyle{plain}
+
+\pagestyle{plain}
+\renewcommand{\bibname}{\chapf  References}
+\renewcommand{\contentsname}{\chapf References}
+%\renewcommand{\thechapter}{\arabic{chapter}}
+\renewcommand{\thechapter}{\arabic{section}}
+%\renewcommand{\thechapter}{\arabic{subsection}}
+%\renewcommand{\thesection}{\arabic{section}.\arabic{subsection}.}
+\renewcommand{\thesection}{\arabic{section}.}
+\renewcommand{\thesubsection}{\arabic{subsection}.}
+%\renewcommand{\thesection}{\arabic{chapter}.\arabic{section}.}
+%\renewcommand{\thesubsection}{\arabic{chapter}.\arabic{section}.\arabic{subsection}.}
+\renewcommand{\thebd}{\arabic{section}.\arabic {bd}}
+\renewcommand{\themd}{\arabic{section}.\arabic{md}}
+\renewcommand{\thedl}{\arabic{section}.\arabic{dl}}
+\renewcommand{\thedn}{\arabic{section}.\arabic{dn}}
+\renewcommand{\thecy}{\arabic{section}.\arabic{cy}}
+\renewcommand{\thevd}{\arabic{section}.\arabic{vd}}
+\renewcommand{\thenx}{\arabic{section}.\arabic{nx}}
+\renewcommand{\thehq}{\arabic{section}.\arabic{hq}}
+\renewcommand{\thebt}{\arabic{section}.\arabic{bt}}
+
+\renewcommand{\theequation}{\arabic{section}.\arabic{equation}}
+\renewcommand{\thefootnote}{(\arabic{footnote})}
+
+%---------------------------------------------------------
+
+%\renewcommand{\chaptermark}[1]{\markboth{\small\chaptername\ \thechapter.\ #1}{}}
+\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter.\ #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\small\thesection.\ #1}{}}
+\renewcommand{\chaptername}{Chapter}
+\renewcommand{\contentsname}{Mc}
+
+\renewcommand\bibname{thebibliography} %{T֩ li׵ tham khׯ}
+
+\newcommand{\ov}{\overrightarrow}
+\newcommand{\ovl}{\overline}
+
+\footskip=30pt
+\begin{document}
+\large
+%\setcounter{page}{3}
+%\tableofcontents
+%\thispagestyle{empty}
+%\input kihieu
+%\thispagestyle{empty}
+\newpage
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\pagestyle{fancy}
+\fancyhf{}
+%\rhead{Bộ môn Toán}
+\lhead{Đại học Phenikaa- Trường công nghệ thông tin}
+\rfoot{\thepage}
+\lfoot{Toán rởi rạc- 3TC. TS. Nguyễn Thị Loan}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\hspace{0.5 cm}
+\begin{center}
+\textbf{BÀI TẬP MÔN TOÁN RỜI RẠC}\\
+
+\textbf{\underline{NĂM HỌC 2024 -- 2025}}\\
+\end{center}
+
+\section[Phần 1. Logic mệnh đề và logic vị từ]{ Phần 1. Logic mệnh đề và logic vị từ}
+\begin{bt}
+Chứng minh các biểu thức sau là hằng đúng bằng hai cách (lập bảng chân trị và dùng luật logic): 
+ \begin{itemize}
+ \item[a)] $((P \rightarrow Q) \land P) \rightarrow Q;$ 
+\item[b)] $P \land Q \rightarrow P;$ 
+ \item[c)] $\lnot (P \land Q) \land P \rightarrow \lnot Q;$
+ \item[d)] $(P \rightarrow Q \land R) \rightarrow ((P \rightarrow Q) \land (P \rightarrow R));$ 
+\item[d)] $((P \land Q) \leftrightarrow P) \rightarrow (P \rightarrow Q).$
+ \end{itemize}
+\end{bt}
+{\bf Lời giải.} 
+
+\begin{enumerate}
+    \item \(((P \rightarrow Q) \land P) \rightarrow Q\)
+
+    \textbf{Cách 1: Lập bảng chân trị}
+
+    \begin{center}
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        $P$ & $Q$ & $P \rightarrow Q$ & $(P \rightarrow Q) \land P$ & Toàn biểu thức \\
+        \hline
+        0 & 0 & 1 & 0 & 1 \\
+        0 & 1 & 1 & 0 & 1 \\
+        1 & 0 & 0 & 0 & 1 \\
+        1 & 1 & 1 & 1 & 1 \\
+        \hline
+    \end{tabular}
+    \end{center}
+
+    Biểu thức luôn đúng $\Rightarrow$ là hằng đúng.
+
+    \textbf{Cách 2: Dùng luật logic}
+
+....
+
+    \bigskip
+
+    \item $P \land Q \rightarrow P$
+
+    \textbf{Cách 1: Bảng chân trị}
+
+    \begin{center}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        $P$ & $Q$ & $P \land Q$ & $P \land Q \rightarrow P$ \\
+        \hline
+        0 & 0 & 0 & 1 \\
+        0 & 1 & 0 & 1 \\
+        1 & 0 & 0 & 1 \\
+        1 & 1 & 1 & 1 \\
+        \hline
+    \end{tabular}
+    \end{center}
+
+...
+
+    \bigskip
+
+    \item $\neg(P \land Q) \land P \rightarrow \neg Q$
+
+    \textbf{Cách 1: Bảng chân trị}
+
+    \begin{center}
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+        \hline
+        $P$ & $Q$ & $P \land Q$ & $\neg(P \land Q)$ & $\neg(P \land Q) \land P$ & $\neg Q$ & Biểu thức \\
+        \hline
+        0 & 0 & 0 & 1 & 0 & 1 & 1 \\
+        0 & 1 & 0 & 1 & 0 & 0 & 1 \\
+        1 & 0 & 0 & 1 & 1 & 1 & 1 \\
+        1 & 1 & 1 & 0 & 0 & 0 & 1 \\
+        \hline
+    \end{tabular}
+    \end{center}
+
+    \textbf{Cách 2:}
+
+   ....
+    \bigskip
+
+    \item $(P \rightarrow Q \land R) \rightarrow ((P \rightarrow Q) \land (P \rightarrow R))$
+
+    \textbf{Cách 1: Bảng chân trị}
+
+    \begin{center}
+    \begin{tabular}{|c|c|c|c|c|c|c|c|}
+        \hline
+        $P$ & $Q$ & $R$ & $Q \land R$ & $P \rightarrow Q \land R$ & $P \rightarrow Q$ & $P \rightarrow R$ & Biểu thức \\
+        \hline
+        0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 \\
+        0 & 0 & 1 & 0 & 1 & 1 & 1 & 1 \\
+        0 & 1 & 0 & 0 & 1 & 1 & 1 & 1 \\
+        0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        1 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\
+        1 & 0 & 1 & 0 & 0 & 0 & 1 & 1 \\
+        1 & 1 & 0 & 0 & 0 & 1 & 0 & 1 \\
+        1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        \hline
+    \end{tabular}
+    \end{center}
+
+....
+    \bigskip
+
+    \item $((P \land Q) \leftrightarrow P) \rightarrow (P \rightarrow Q)$
+
+    \textbf{Cách 1: Bảng chân trị}
+
+    \begin{center}
+    \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        $P$ & $Q$ & $P \land Q$ & $(P \land Q) \leftrightarrow P$ & $P \rightarrow Q$ & Biểu thức \\
+        \hline
+        0 & 0 & 0 & 1 & 1 & 1 \\
+        0 & 1 & 0 & 1 & 1 & 1 \\
+        1 & 0 & 0 & 0 & 0 & 1 \\
+        1 & 1 & 1 & 1 & 1 & 1 \\
+        \hline
+    \end{tabular}
+    \end{center}
+...
+
+\end{enumerate}
+
+\begin{bt}
+ Sử dụng quy tắc suy diễn trong mệnh đề logic
+    \begin{itemize}
+     \item[a)] Chứng minh mệnh đề sau là hằng đúng: 
+           $$((X_1 \rightarrow X_2) \land (\lnot X_3 \lor X_4) \land (X_1 \lor X_3)) \rightarrow (\lnot X_2 \rightarrow X_4).$$
+        \item[b)] Kiểm tra xem suy luận của đoạn văn sau có đúng hay không?\\
+        ``Nếu được thưởng cuối năm An sẽ đi Đà Lạt. Nếu đi Đà Lạt thì An sẽ thăm Thiền Viện. Mà An không thăm Thiền Viện. Vậy An không được thưởng cuối năm''
+    \end{itemize}          
+\end{bt}
+{\bf Lời giải.} 
+
+\textbf{Đặt:}
+\begin{itemize}
+  \item $X_1$ là mệnh đề: "An được thưởng cuối năm";
+  \item $X_2$ là mệnh đề: "An đi Đà Lạt";
+  \item $X_3$ là mệnh đề: "An thăm Thiền Viện".
+\end{itemize}
+
+Đoạn văn trên tương đương với mô hình suy diễn dưới đây:
+\[
+\begin{array}{c}
+X_1 \rightarrow X_2 \\
+X_2 \rightarrow X_3 \\
+\overline{X_3} \\
+\hline
+\therefore \overline{X_1} \quad (*)
+\end{array}
+\]
+
+Ta chỉ ra mô hình suy diễn (*) là đúng. Thật vậy:
+\[
+\begin{aligned}
+&X_1 \rightarrow X_2 \\
+&(*) \equiv 
+\left\{
+\begin{array}{l}
+X_2 \rightarrow X_3 \\
+\overline{X_3}
+\end{array}
+\right.
+\Rightarrow \overline{X_1} \equiv
+\left\{
+\begin{array}{l}
+X_1 \rightarrow X_2 \\
+\overline{X_3}
+\end{array}
+\right.
+\Rightarrow \overline{X_1} \\
+&\equiv \overline{X_1} \rightarrow \overline{X_1} \equiv X_1 \Rightarrow X_1 \equiv X_1 \vee \overline{X_1} \equiv 1.
+\end{aligned}
+\]
+
+Vậy suy luận trên là đúng. Quy tắc phủ định được áp dụng.
+
+\begin{bt}
+ Dịch các câu thành biểu thức logic
+ \begin{itemize}
+ \item[a)] Tất cả chim ruồi đều có màu sắc sặc sỡ.
+ \item[b)] Không có con chim lớn nào sống bằng mật ong.
+ \item[c)] Các chim lớn không sống bằng mật ong đều có màu xám.
+ \item[d)] Chim ruồi đều nhỏ.
+ \end{itemize}
+\end{bt}
+
+{\bf Lời giải.} 
+
+\subsection*{Đặt:}
+\begin{itemize}
+    \item $C(x)$: ``x là chim ruồi''
+    \item $M(x)$: ``x có màu sắc sặc sỡ''
+    \item $L(x)$: ``x là chim lớn''
+    \item $S(x)$: ``x sống bằng mật ong''
+    \item $X(x)$: ``x có màu xám''
+    \item $N(x)$: ``x là chim nhỏ''
+\end{itemize}
+
+\subsection*{Các biểu thức logic:}
+\begin{itemize}
+    \item[a)] Tất cả chim ruồi đều có màu sắc sặc sỡ.\\
+    Biểu thức logic:
+    \[
+    \forall x \, (C(x) \rightarrow M(x))
+    \]
+    Trong đó:
+    \begin{itemize}
+        \item $C(x)$: ``x là chim ruồi''
+        \item $M(x)$: ``x có màu sắc sặc sỡ''
+    \end{itemize}
+
+    \item[b)] Không có con chim lớn nào sống bằng mật ong.\\
+    Biểu thức logic (cách 1):
+    \[
+    \forall x \, (L(x) \rightarrow \neg S(x))
+    \]
+    Hoặc (cách 2):
+    \[
+    \neg \exists x \, (L(x) \land S(x))
+    \]
+    Trong đó:
+    \begin{itemize}
+        \item $L(x)$: ``x là chim lớn''
+        \item $S(x)$: ``x sống bằng mật ong''
+    \end{itemize}
+
+    \item[c)] Các chim lớn không sống bằng mật ong đều có màu xám.\\
+    Biểu thức logic:
+    \[
+    \forall x \, ((L(x) \land \neg S(x)) \rightarrow X(x))
+    \]
+    Trong đó:
+    \begin{itemize}
+        \item $X(x)$: ``x có màu xám''
+    \end{itemize}
+
+    \item[d)] Chim ruồi đều nhỏ.\\
+    Biểu thức logic:
+    \[
+    \forall x \, (C(x) \rightarrow N(x))
+    \]
+    Trong đó:
+    \begin{itemize}
+        \item $N(x)$: ``x là chim nhỏ''
+    \end{itemize}
+\end{itemize}
+
+\begin{bt}
+Dịch các câu thành biểu thức logic
+Cho $L(x,y)$ là câu ``$x$ yêu $y$'', với không gian của của $x$ và $y$ là tập hợp mọi người trên thế giới. Hãy dùng các lượng từ để diễn đạt các câu sau:
+    \begin{itemize}
+     \item[a)] Mọi người đều yêu mai.
+        \item[b)] Mọi người đều yêu một ai đó.
+        \item[c)] Có một người mà tất cả mọi người đều yêu.
+        \item[d)] Không có ai yêu tất cả mọi người.
+        \item[e)] Có một người ế. (Gợi ý: Họ không yêu ai hoặc không ai yêu họ)
+        \item[f)] Có một người mà Nam không yêu.
+        \item[g)] Có đúng một người mà tất cả mọi người đều yêu.
+        \item[h)] Có đúng hai người mà Tuấn yêu.
+    \end{itemize}
+\end{bt}
+
+{\bf Lời giải.} 
+
+\subsection*{Đặt:}
+\begin{itemize}
+    \item $L(x, y)$: ``x yêu y''
+    \item Các hằng số:
+    \begin{itemize}
+        \item $mai$: đại diện cho Mai
+        \item $nam$: đại diện cho Nam
+        \item $tuan$: đại diện cho Tuấn
+    \end{itemize}
+    \item Miền xác định của $x, y$: tập hợp tất cả mọi người trên thế giới
+\end{itemize}
+
+\subsection*{Các biểu thức logic:}
+
+\begin{itemize}
+    \item[a)] \textbf{Mọi người đều yêu Mai:}
+    \[
+    \forall x \, L(x, mai)
+    \]
+
+    \item[b)] \textbf{Mọi người đều yêu một ai đó:}
+    \[
+    \forall x \, \exists y \, L(x, y)
+    \]
+
+    \item[c)] \textbf{Có một người mà tất cả mọi người đều yêu:}
+    \[
+    \exists y \, \forall x \, L(x, y)
+    \]
+
+    \item[d)] \textbf{Không có ai yêu tất cả mọi người:}
+    \[
+    \neg \exists x \, \forall y \, L(x, y)
+    \]
+    hoặc tương đương:
+    \[
+    \forall x \, \exists y \, \neg L(x, y)
+    \]
+
+    \item[e)] \textbf{Có một người ế (không yêu ai hoặc không ai yêu họ):}
+    \[
+    \exists x \left[ \left( \forall y \, \neg L(x, y) \right) \lor \left( \forall y \, \neg L(y, x) \right) \right]
+    \]
+
+    \item[f)] \textbf{Có một người mà Nam không yêu:}
+    \[
+    \exists y \, \neg L(nam, y)
+    \]
+
+    \item[g)] \textbf{Có đúng một người mà tất cả mọi người đều yêu:}
+    \[
+    \exists y \left[ \left( \forall x \, L(x, y) \right) \land \left( \forall z \, \left( \left( \forall x \, L(x, z) \right) \rightarrow z = y \right) \right) \right]
+    \]
+
+    \item[h)] \textbf{Có đúng hai người mà Tuấn yêu:}
+    \[
+    \exists x \, \exists y \left[ x \ne y \land L(tuan, x) \land L(tuan, y) \land \forall z \left( L(tuan, z) \rightarrow (z = x \lor z = y) \right) \right]
+    \]
+\end{itemize}
+
+\begin{bt}
+Mô hình suy diễn dưới đây trên trường $\Omega$ có đúng không?
+\begin{itemize}
+\item[a)]$(\forall x) (P(x) \rightarrow (Q(x) \land R(x))).$
+\item[b)] $\begin{matrix}
+       (\forall x) (P(x) \land F(x))\\
+    \overline{\therefore (\forall x)(R(x) \land F(x))}.
+\end{matrix}.$
+\end{itemize}
+
+\end{bt}
+\begin{bt}
+Chứng minh các cặp mệnh đề sau:
+\begin{itemize}
+\item[a)] $(P \rightarrow Q) \rightarrow R$ và $P \rightarrow (Q \rightarrow R)$ không tương đương.
+    \item[b)] $\lnot P \leftrightarrow Q$ và $ P \leftrightarrow \lnot Q$ tương đương.
+    \item[c)] $\lnot (P \leftrightarrow Q)$ và $ \lnot P \leftrightarrow Q$ tương đương.
+    \item[d)] $\lnot \exists x \forall y P(x,y)$ và $\forall x \exists y \lnot P(x,y)$ tương đương.
+    \item[e)] $(\forall x P(x)) \land A$ và $\forall x (P(X) \land A)$ tương đương, ($A$ là mệnh đề không có liên quan với lượng từ nào).
+    \item[f)] $(\exists x P(x)) \land A$ và $\exists x (P(X) \land A)$ tương đương, ($A$ là mệnh đề không có liên quan với lượng từ nào).
+\end{itemize}
+
+\end{bt}
+
+{\bf Lời giải.} 
+
+\begin{enumerate}
+    \item[(a)] $(P \rightarrow Q) \rightarrow R$ và $P \rightarrow (Q \rightarrow R)$ \textbf{không tương đương}
+
+    \textit{Chứng minh bằng bảng chân trị:}
+
+    \begin{center}
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+        \hline
+        $P$ & $Q$ & $R$ & $P \rightarrow Q$ & $(P \rightarrow Q) \rightarrow R$ & $Q \rightarrow R$ & $P \rightarrow (Q \rightarrow R)$ \\
+        \hline
+        T & T & T & T & T & T & T \\
+        T & T & F & T & F & F & F \\
+        T & F & T & F & T & T & T \\
+        T & F & F & T & F & T & F \\
+        F & T & T & T & T & T & T \\
+        F & T & F & T & F & F & T \\
+        F & F & T & T & T & T & T \\
+        F & F & F & T & F & T & T \\
+        \hline
+    \end{tabular}
+    \end{center}
+
+    Vì các cột $(P \rightarrow Q) \rightarrow R$ và $P \rightarrow (Q \rightarrow R)$ có giá trị khác nhau, nên hai mệnh đề \textbf{không tương đương}.
+
+    \item[(b)] $\neg P \leftrightarrow Q$ và $P \leftrightarrow \neg Q$ \textbf{tương đương}
+
+    \begin{align*}
+        \neg P \leftrightarrow Q &\equiv (\neg P \rightarrow Q) \land (Q \rightarrow \neg P) \\
+        &\equiv (P \lor Q) \land (\neg Q \lor \neg P) \\
+        &\equiv (P \land \neg Q) \lor (\neg P \land Q) \\
+        &\equiv P \leftrightarrow \neg Q
+    \end{align*}
+
+    \textbf{Kết luận}: Hai mệnh đề \textbf{tương đương}.
+
+    \item[(c)] $\neg(P \leftrightarrow Q)$ và $\neg P \leftrightarrow Q$ \textbf{tương đương}
+
+    \begin{align*}
+        \neg(P \leftrightarrow Q) &\equiv (P \land \neg Q) \lor (\neg P \land Q) \\
+        \neg P \leftrightarrow Q &\equiv (\neg P \rightarrow Q) \land (Q \rightarrow \neg P) \\
+        &\equiv (P \lor Q) \land (\neg Q \lor \neg P) \\
+        &\equiv (P \land \neg Q) \lor (\neg P \land Q)
+    \end{align*}
+
+    \textbf{Kết luận}: Hai mệnh đề \textbf{tương đương}.
+
+    \item[(d)] $\neg \exists x \forall y P(x, y)$ và $\forall x \exists y \neg P(x, y)$ \textbf{tương đương}
+
+    \begin{align*}
+        \neg \exists x \forall y P(x, y) &\equiv \forall x \neg \forall y P(x, y) \\
+        &\equiv \forall x \exists y \neg P(x, y)
+    \end{align*}
+
+    \textbf{Kết luận}: Hai mệnh đề \textbf{tương đương}.
+
+    \item[(e)] $(\forall x P(x)) \land A$ và $\forall x(P(x) \land A)$ \textbf{tương đương}, với $A$ không phụ thuộc vào $x$.
+
+    \textit{Giải thích}:
+
+    \begin{itemize}
+        \item Vế trái: ``$P(x)$ đúng với mọi $x$ và $A$ đúng''.
+        \item Vế phải: ``Với mọi $x$, $P(x)$ đúng và $A$ đúng''.
+    \end{itemize}
+
+    Vì $A$ không phụ thuộc $x$, nên ta có thể rút $A$ ra ngoài lượng từ $\forall$.
+
+    \textbf{Kết luận}: Hai mệnh đề \textbf{tương đương}.
+
+    \item[(f)] $(\exists x P(x)) \land A$ và $\exists x(P(x) \land A)$ \textbf{tương đương}, với $A$ không phụ thuộc vào $x$.
+
+    \textit{Giải thích}:
+
+    \begin{itemize}
+        \item Vế trái: ``Tồn tại $x$ sao cho $P(x)$ đúng, và $A$ đúng''.
+        \item Vế phải: ``Tồn tại $x$ sao cho $P(x)$ đúng và $A$ đúng''.
+    \end{itemize}
+
+    Vì $A$ không phụ thuộc vào $x$, nên $A$ đúng có thể được đưa vào trong lượng từ $\exists$.
+
+    \textbf{Kết luận}: Hai mệnh đề \textbf{tương đương}.
+\end{enumerate}
+
+\begin{bt}
+\begin{itemize}
+\item[a)] Suy luận dưới đây có đúng không?
+    $$\begin{matrix}
+        (\lnot X_1 \lor X_2) \rightarrow X_3\\
+        X_3 \rightarrow (X_4 \lor X_5)\\
+        \lnot X_4 \land \lnot X_6\\
+        \lnot X_6 \rightarrow \lnot X_5\\
+        \overline{\qquad \qquad \therefore X_1 \qquad \qquad}
+    \end{matrix}.$$
+    \item[b)] Dùng mô hình suy diễn, kiểm tra xem biểu thức logic sau đúng hay sai?
+    $$((P \rightarrow ((Q \lor R) \land S)) \land P) \rightarrow ((Q \lor R) \land S).$$
+\end{itemize}
+\end{bt}
+\begin{bt}
+Cho $P(x), Q(x), R(x), S(x)$ tướng ứng với các câu ``$x$ là một đứa bé'', ``$x$ tư duy logic'', ``$x$ có khả năng cai quản một con cá sấu'', ``$x$ bị coi thường''. Giả sử rằng không gian là tập hợp tất cả mọi người. Hãy dùng các lượng từ, cá liên từ logic cùng với $P(x), Q(x), R(x), S(x)$ để diễn đạt các câu sau:
+\begin{itemize}
+\item[a)] Những đứa trẻ không tư duy logic.
+\item[b)] Không ai bị coi thường nếu cai quản được cá sấu.
+\item[c)] Những người không tư duy logic hay bị coi thường.
+\item[d)] Những đứa bé không cai quản được cá sấu.
+\item[e)] (d) có suy ra được từ (a), (b) và (c) không?
+\end{itemize}
+\end{bt}
+
+{\bf Lời giải.} 
+\subsection*{Lời giải}
+
+\subsection*{Đặt:}
+\begin{itemize}
+    \item $P(x)$: ``x là một đứa bé''
+    \item $Q(x)$: ``x tư duy logic''
+    \item $R(x)$: ``x có khả năng cai quản một con cá sấu''
+    \item $S(x)$: ``x bị coi thường''
+    \item Miền xác định của $x$: tập hợp tất cả mọi người
+\end{itemize}
+
+\subsection*{Biểu thức logic:}
+
+\begin{itemize}
+    \item[a)] Những đứa trẻ không tư duy logic:
+    \[
+    \forall x \, (P(x) \rightarrow \neg Q(x))
+    \]
+
+    \item[b)] Không ai bị coi thường nếu cai quản được cá sấu:
+    \[
+    \forall x \, (R(x) \rightarrow \neg S(x))
+    \]
+
+    \item[c)] Những người không tư duy logic hay bị coi thường:
+    \[
+    \forall x \, (\neg Q(x) \rightarrow S(x))
+    \]
+
+    \item[d)] Những đứa bé không cai quản được cá sấu:
+    \[
+    \forall x \, (P(x) \rightarrow \neg R(x))
+    \]
+\end{itemize}
+
+\subsection*{e) Câu (d) có suy ra được từ (a), (b) và (c) không?}
+
+Phân tích suy luận:
+
+\begin{itemize}
+    \item Từ (a): $P(x) \rightarrow \neg Q(x)$
+    \item Từ (c): $\neg Q(x) \rightarrow S(x)$
+    \item Suy ra: $P(x) \rightarrow S(x)$ \quad (theo tính bắc cầu)
+
+    \item Từ (b): $R(x) \rightarrow \neg S(x)$
+    \item Phủ định: $S(x) \rightarrow \neg R(x)$
+
+    \item Kết hợp: $P(x) \rightarrow S(x)$ và $S(x) \rightarrow \neg R(x)$
+    \item Suy ra: $P(x) \rightarrow \neg R(x)$ \quad (tức là câu (d))
+\end{itemize}
+
+Kết luận: Câu (d) có thể suy ra được từ (a), (b) và (c).
+
+\end{document}
+
+%%11:25:17 30/9/2014Last Modification of contents
+%%12:20:9 11/10/2018Last Modification of contents
